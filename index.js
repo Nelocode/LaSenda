@@ -878,4 +878,25 @@ window.addEventListener("DOMContentLoaded", () => {
   updateTimelinePath();
   window.addEventListener("resize", updateTimelinePath);
   window.addEventListener("load", updateTimelinePath);
+
+  // --- 13. Video Start Time Control (Skip logo intro and start at map) ---
+  const cinematicVideo = document.querySelector(".video-bg");
+  const videoStartSecs = 7; // Skip first 7 seconds (logo intro) and start directly at the map
+
+  if (cinematicVideo) {
+    if (cinematicVideo.readyState >= 1) {
+      cinematicVideo.currentTime = videoStartSecs;
+    } else {
+      cinematicVideo.addEventListener("loadedmetadata", () => {
+        cinematicVideo.currentTime = videoStartSecs;
+      });
+    }
+
+    // Loop correction: when it loops, reset it to videoStartSecs instead of 0
+    cinematicVideo.addEventListener("timeupdate", () => {
+      if (cinematicVideo.currentTime < 0.5) {
+        cinematicVideo.currentTime = videoStartSecs;
+      }
+    });
+  }
 });
