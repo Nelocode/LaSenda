@@ -483,6 +483,7 @@ header.scrolled-fallback .logo-img {
 .section-padding {
   padding: 8rem 5%;
   position: relative;
+  overflow: hidden;
 }
 
 .manifesto-section {
@@ -2428,12 +2429,11 @@ footer {
 .video-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(24, 32, 18, 0.72) 0%,
-    rgba(24, 32, 18, 0.45) 50%,
-    rgba(24, 32, 18, 0.65) 100%
-  );
+  background: 
+    /* Top and bottom architectural mask to fade video smoothly into adjacent sections */
+    linear-gradient(to bottom, var(--color-card-bg) 0%, rgba(245, 242, 236, 0) 15%, rgba(253, 252, 249, 0) 85%, var(--color-bg-light) 100%),
+    /* Dark overlay for text readability */
+    linear-gradient(135deg, rgba(24, 32, 18, 0.72) 0%, rgba(24, 32, 18, 0.45) 50%, rgba(24, 32, 18, 0.65) 100%);
   z-index: 1;
 }
 
