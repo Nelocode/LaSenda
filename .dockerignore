@@ -19,7 +19,6 @@ assets/img/render_*.png
 *.md
 README*
 Dockerfile
-nginx.conf
 
 # OS noise
 .DS_Store
