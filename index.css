@@ -2687,63 +2687,60 @@ footer {
   border-color: var(--color-accent-gold-light);
 }
 
-.planta-frame {
-  position: relative;
-  border-radius: 16px;
-  border: 1px solid var(--color-border-light);
-  overflow: hidden;
-  background-color: #fff;
-  /* Dynamic height, no fixed aspect ratio so blueprint is fully visible and large */
-}
-
-.planta-link {
-  display: block;
-  width: 100%;
-}
-
-.planta-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: var(--transition-smooth);
-}
-
-.planta-zoom-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(36, 45, 31, 0.4);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+.planta-download-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  color: #fff;
-  opacity: 0;
+  text-align: center;
+  padding: 4.5rem 2rem;
+  border: 1px dashed var(--color-border-light);
+  border-radius: 16px;
+  background-color: #fff;
+  gap: 1rem;
   transition: var(--transition-quick);
-  z-index: 3;
 }
 
-.planta-link:hover .planta-zoom-overlay {
-  opacity: 1;
+.planta-download-card:hover {
+  border-color: var(--color-accent-gold-light);
+  background-color: var(--color-bg-light);
 }
 
-.planta-link:hover .planta-img {
-  transform: scale(1.02);
+.planta-download-card .document-icon {
+  font-size: 3.5rem;
+  color: var(--color-accent-gold);
+  margin-bottom: 0.5rem;
 }
 
-.planta-zoom-overlay i {
-  font-size: 2.5rem;
-  color: var(--color-accent-gold-light);
+.planta-download-card h3 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--color-text-dark);
 }
 
-.planta-zoom-overlay span {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
+.planta-download-card p {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+.planta-view-link {
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: var(--color-primary-green);
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
+  border-bottom: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.planta-view-link:hover {
+  color: var(--color-primary-green-dark);
+  border-bottom-color: var(--color-primary-green-dark);
 }
 
 .planta-info-footer {
