@@ -1,0 +1,27 @@
+# Carpetas de trabajo (NO van al repositorio)
+100. Carpeta Compartida/
+01. PRESENTACIONES/
+URBANISMO/
+
+# Archivos de grabación y archivos raíz temporales
+cds-rpch-axb*.mp4
+image.png
+scratch/
+
+# Renders PNG originales pesados (solo se usan los JPG optimizados)
+assets/img/render_*.png
+
+# Video original sin comprimir (se usa trailer_web.mp4)
+assets/img/trailer.mp4
+assets/img/campo.mp4
+
+# Git
+*.orig
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+.vscode/

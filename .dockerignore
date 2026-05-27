@@ -1,0 +1,26 @@
+# Exclude everything NOT needed in the Docker image
+
+# Work / source folders
+100. Carpeta Compartida/
+01. PRESENTACIONES/
+URBANISMO/
+scratch/
+
+# Original heavy assets (only the optimized versions go into the image)
+assets/img/trailer.mp4
+assets/img/campo.mp4
+assets/img/render_*.png
+
+# Git metadata
+.git/
+.gitignore
+
+# Docs / tooling
+*.md
+README*
+Dockerfile
+nginx.conf
+
+# OS noise
+.DS_Store
+Thumbs.db

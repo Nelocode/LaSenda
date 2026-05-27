@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Senda® | El privilegio de pertenecer | Suroeste Antioqueño</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="La Senda es un exclusivo proyecto parcelario en Titiribí, Antioquia. Descubre 62 lotes de lujo rodeados de naturaleza, senderos ecológicos, miradores y quebradas con la mejor conectividad gracias a Pacífico 1.">
+  <meta name="keywords" content="la senda, lotes titiribi, parcelacion suroeste antioqueño, lotes campestres medellin, la siria lotes, parcelacion la senda, lotes antioquia, cerro tusa turismo, lotes pacifico 1">
+  <meta name="author" content="Contexto Arquitectura (CNTXT)">
+  
+  <!-- OpenGraph Card -->
+  <meta property="og:title" content="La Senda® | El privilegio de pertenecer">
+  <meta property="og:description" content="Exclusivos lotes campestres desde 3,000 m² en el Suroeste Antioqueño, combinando desconexión natural y conectividad moderna a minutos de Medellín.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/encuentro_1.jpg">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="index.css?v=4">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="theme-calma">
+
+  <!-- Navigation Bar -->
+  <header id="main-header">
+    <div class="nav-container">
+      <a href="#" class="logo-link">
+        <img src="assets/img/logo_lasenda.png" alt="La Senda Logo" class="logo-img">
+        <span class="brand-text">La Senda</span>
+      </a>
+      
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="nav-links" id="nav-links" role="menubar">
+        <li role="none"><a href="#manifiesto" role="menuitem">Manifiesto</a></li>
+        <li role="none"><a href="#elige-tu-senda" role="menuitem">Elige tu Senda</a></li>
+        <li role="none"><a href="#ficha-tecnica" role="menuitem">Especificaciones</a></li>
+        <li role="none"><a href="#lotes" role="menuitem">Inventario</a></li>
+        <li role="none"><a href="#contacto" role="menuitem"><button class="btn-contact-nav">Agendar Visita</button></a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section (Asimétrico Editorial) -->
+  <section class="hero" id="hero">
+    <div class="hero-grid">
+      <div class="hero-editorial-text">
+        <p class="hero-tagline">Titiribí, Suroeste Antioqueño</p>
+        <h1 class="hero-title">
+          LA SENDA
+          <span>El privilegio de pertenecer</span>
+        </h1>
+        <p class="hero-description">
+          Un refugio residencial campestre concebido bajo el equilibrio natural del suroeste antioqueño. 62 lotes exclusivos rodeados de bosques, quebradas y senderos.
+        </p>
+        <div class="hero-cta">
+          <a href="#elige-tu-senda" class="btn-primary">Explorar mi Camino</a>
+        </div>
+      </div>
+      <div class="hero-editorial-media">
+        <div class="arch-image-wrapper">
+          <div class="arch-image" id="hero-bg" style="background-image: url('assets/img/calma_1.jpg');"></div>
+        </div>
+        <div class="hero-caption">Vista hacia las estancias naturales del suroeste</div>
+      </div>
+    </div>
+    <div class="scroll-indicator" onclick="document.getElementById('manifiesto').scrollIntoView({behavior: 'smooth'})" role="button" aria-label="Desplazarse hacia abajo">
+      <span>Explorar</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Manifesto Section (Senda Histórica) -->
+  <section class="section-padding manifesto-section" id="manifiesto">
+    <div class="logo-watermark watermark-left" style="background-image: url('assets/img/logo_lasenda.png');"></div>
+    <div class="logo-watermark watermark-right" style="background-image: url('assets/img/logo_lasenda.png');"></div>
+    <div class="manifesto-bg-decoration">HISTORIA</div>
+    <div class="container-timeline">
+      <div class="section-header reveal">
+        <p class="section-subtitle">Caminos ancestrales</p>
+        <h2 class="section-title">El Origen del Territorio</h2>
+        <p style="color: var(--color-text-muted); max-width: 580px; margin: 1.5rem auto 0; font-size: 0.95rem;">
+          Dicen que cada territorio guarda varios caminos, pero solo algunos están destinados a encontrarnos. Conoce el origen de los trazados de La Senda.
+        </p>
+      </div>
+
+      <div class="timeline-wrapper">
+        <!-- Vertical sinuous path line -->
+        <div class="timeline-line">
+          <svg viewBox="0 0 100 800" preserveAspectRatio="none" class="timeline-svg-path" aria-hidden="true" style="overflow: visible;">
+            <!-- Base light path -->
+            <path id="timeline-base-path" d="M 50,0 L 50,80 C 80,150 80,210 50,280 C 20,380 20,480 50,580 C 80,660 80,720 50,800" fill="none" stroke="var(--color-border-light)" stroke-width="1.5"/>
+            <!-- Active path from Node 1 to Node 3 -->
+            <path id="timeline-active-path" d="M 50,0 L 50,80 C 80,150 80,210 50,280 C 20,380 20,480 50,580" fill="none" stroke="var(--color-accent-gold)" stroke-width="2.5"/>
+            <!-- Discovery path segment from Node 3 to Node 4 (curves to the right) -->
+            <path id="timeline-discovery-path" d="M 50,580 C 80,660 80,720 50,800" fill="none" stroke="var(--theme-accent)" stroke-width="3" stroke-dasharray="300" stroke-dashoffset="300" style="transition: stroke-dashoffset 1.8s cubic-bezier(0.25, 0.8, 0.25, 1);"/>
+          </svg>
+          <div class="timeline-stone-pointer" id="timeline-pointer" style="display: none;"></div>
+        </div>
+
+        <!-- Station 1 -->
+        <div class="timeline-station left reveal">
+          <div class="station-node" aria-hidden="true" style="top: 80px;">01</div>
+          <div class="station-content">
+            <span class="station-meta">Estación I &bull; Las Redes Vivas</span>
+            <h3 class="station-title">Caminos Heredados</h3>
+            <p class="station-text">
+              Para los Titiribíes y Sinifanaes, los senderos no se trazaban: se heredaban. Eran redes vivas que se adaptaban de forma orgánica al relieve, respetando los nacimientos de agua y la topografía.
+            </p>
+          </div>
+        </div>
+
+        <!-- Station 2 -->
+        <div class="timeline-station right reveal">
+          <div class="station-node" aria-hidden="true" style="top: 280px;">02</div>
+          <div class="station-content">
+            <span class="station-meta">Estación II &bull; Tránsito con Intención</span>
+            <h3 class="station-title">Caminar sin Prisa</h3>
+            <p class="station-text">
+              No se trataba de llegar rápido, sino de transitar con intención. Caminar era un acto sagrado de conexión con la tierra, una infraestructura viva para el intercambio y la memoria.
+            </p>
+          </div>
+        </div>
+
+        <!-- Station 3 -->
+        <div class="timeline-station left reveal">
+          <div class="station-node" aria-hidden="true" style="top: 580px;">03</div>
+          <div class="station-content">
+            <span class="station-meta">Estación III &bull; Hitos de Memoria</span>
+            <h3 class="station-title">Rutas de Encuentro</h3>
+            <p class="station-text">
+              Rutas espirituales y de intercambio de semillas bajo el cobijo protector de Cerro Tusa, un referente natural que funcionaba como guía y conexión territorial para la comunidad.
+            </p>
+            <div class="trace-path-container" style="margin-top: 1.5rem; text-align: right;">
+              <button class="btn-trace-path" id="btn-trace-timeline" type="button" style="padding: 0.6rem 1.4rem; background: var(--color-primary-green); border: 1px solid var(--color-primary-green-dark); border-radius: 20px; color: #fff; font-family: var(--font-body); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; transition: var(--transition-quick);">
+                Descubrir Senda Contemporánea <i class="fa-solid fa-compass" style="margin-left: 5px;"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Station 4 -->
+        <div class="timeline-station right reveal station-locked" id="station-4">
+          <div class="station-node" aria-hidden="true" style="top: 800px;">04</div>
+          <div class="station-content">
+            <span class="station-meta">Estación IV &bull; Acupuntura Urbana</span>
+            <h3 class="station-title">El Retorno a lo Esencial</h3>
+            <p class="station-text">
+              La Senda retoma esa verdad profunda. Un modelo de urbanismo respetuoso con la montaña y el bosque nativo. El camino aquí no se impone: se descubre a cada paso.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="manifesto-signature-editorial reveal" style="text-align: center; margin-top: 5rem;">
+        <div class="signature-title" style="font-family: var(--font-display); font-size: 1.5rem; text-transform: uppercase; color: var(--color-text-dark); letter-spacing: 0.1em; font-weight: 500;">LA SENDA®</div>
+        <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-text-muted); letter-spacing: 0.1em; display: block; margin-top: 5px;">El privilegio de pertenecer</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Organic SVG Divider -->
+  <div class="svg-organic-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C120,70 240,10 360,50 C480,90 600,20 720,45 C840,70 960,10 1080,40 C1200,70 1320,20 1440,50 L1440,90 L0,90 Z" fill="var(--color-bg-main)"/>
+    </svg>
+    <div class="svg-divider-logo-mark">
+      <img src="assets/img/logo_lasenda.png" alt="" class="divider-icon-img">
+    </div>
+  </div>
+
+  <!-- Interactive Stage Selector ("Elige tu Senda") -->
+  <section class="section-padding selector-section" id="elige-tu-senda">
+    <div class="section-header reveal">
+      <p class="section-subtitle">Descubre tu ritmo</p>
+      <h2 class="section-title">Encuentra tu estilo de vida</h2>
+    </div>
+    
+    <!-- Container Query Wrapper -->
+    <div class="sendas-grid-container">
+      <div class="sendas-grid reveal">
+        <!-- Portal 1: Encuentro -->
+        <div class="senda-card" data-senda="encuentro" style="--stage-color: #AE5D1F;" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">
+          <div class="senda-card-img" style="background-image: url('assets/img/encuentro_1.jpg');"></div>
+          <div class="senda-card-content">
+            <span class="senda-card-stage">Etapa I - Conexión</span>
+            <h3 class="senda-card-title">Senda del Encuentro</h3>
+            <p class="senda-card-desc">Diseñada para celebrar la vida en comunidad. Activa tus días con el mall comercial y comparte en un entorno social único.</p>
+            <a class="senda-card-link" aria-hidden="true">Explorar camino <span><i class="fa-solid fa-arrow-right"></i></span></a>
+          </div>
+        </div>
+        
+        <!-- Portal 2: Movimiento -->
+        <div class="senda-card" data-senda="movimiento" style="--stage-color: #C27D38;" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">
+          <div class="senda-card-img" style="background-image: url('assets/img/movimiento_1.jpg');"></div>
+          <div class="senda-card-content">
+            <span class="senda-card-stage">Etapa II - Vitalidad</span>
+            <h3 class="senda-card-title">Senda del Movimiento</h3>
+            <p class="senda-card-desc">Para quienes necesitan la acción para sentirse vivos. Senderos de montaña que rematan en un espectacular mirador panorámico.</p>
+            <a class="senda-card-link" aria-hidden="true">Explorar camino <span><i class="fa-solid fa-arrow-right"></i></span></a>
+          </div>
+        </div>
+        
+        <!-- Portal 3: Calma -->
+        <div class="senda-card" data-senda="calma" style="--stage-color: #3E8A7E;" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">
+          <div class="senda-card-img" style="background-image: url('assets/img/calma_1.jpg');"></div>
+          <div class="senda-card-content">
+            <span class="senda-card-stage">Etapa III - Introspección</span>
+            <h3 class="senda-card-title">Senda de la Calma</h3>
+            <p class="senda-card-desc">El refugio del silencio y la introspección. Disfruta del murmullo del agua en el parque lineal y relájate en la estancia del bosque.</p>
+            <a class="senda-card-link" aria-hidden="true">Explorar camino <span><i class="fa-solid fa-arrow-right"></i></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Detailed View Container (Dynamic Content) -->
+    <div class="senda-details-container" id="senda-details-container" aria-live="polite">
+      <div class="senda-details-grid">
+        <div class="senda-details-gallery">
+          <div class="gallery-carousel" id="gallery-carousel">
+            <!-- Dynamic slides -->
+          </div>
+          <div class="carousel-nav">
+            <button class="carousel-btn" id="carousel-prev" aria-label="Imagen anterior de la etapa"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="carousel-btn" id="carousel-next" aria-label="Siguiente imagen de la etapa"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+        <div class="senda-details-info">
+          <span class="details-subtitle" id="details-subtitle">Etapa 1 - Conexión Social</span>
+          <h3 class="details-title" id="details-title" tabindex="-1">Senda del Encuentro</h3>
+          <p class="details-story" id="details-story">Contenido dinámico de la senda seleccionada.</p>
+          <h4 style="font-family: var(--font-body); font-size: 0.72rem; font-weight: 600; color: var(--color-text-dark); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.1em; border-top: 1px solid var(--color-border-light); padding-top: 1.5rem;">Amenidades Destacadas:</h4>
+          <div class="details-amenities" id="details-amenities">
+            <!-- Dynamic amenities list -->
+          </div>
+          <button class="btn-details-cta" id="details-cta-btn">Ver Lotes en esta Senda</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Organic SVG Divider -->
+  <div class="svg-organic-divider svg-divider-dark" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,55 C180,10 360,80 540,40 C720,0 900,70 1080,35 C1260,0 1380,60 1440,40 L1440,90 L0,90 Z" fill="var(--color-card-bg)"/>
+    </svg>
+  </div>
+
+  <!-- Cinematic Video Section -->
+  <section class="video-cinematic-section" id="video-territorio">
+    <div class="video-cinematic-inner">
+      <video class="video-bg" autoplay muted loop playsinline poster="assets/img/IMG_4682.jpg">
+        <source src="assets/img/trailer_web.mp4" type="video/mp4">
+      </video>
+      <div class="video-overlay"></div>
+      <div class="video-content reveal">
+        <span class="video-eyebrow">El territorio habla</span>
+        <h2 class="video-headline">Vive La Senda<br>antes de elegirla</h2>
+        <p class="video-sub">24,6 hectáreas de suroeste antioqueño puro. Bosque nativo, quebradas y la brisa de la montaña, capturados en su estado más natural.</p>
+        <a href="#elige-tu-senda" class="btn-video-cta">Encontrar mi lote <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Organic SVG Divider back to light -->
+  <div class="svg-organic-divider svg-divider-to-light" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C200,80 400,10 600,50 C800,90 1000,15 1200,55 C1320,75 1380,30 1440,45 L1440,0 L0,0 Z" fill="var(--color-card-bg)"/>
+    </svg>
+  </div>
+
+  <!-- Technical Specifications Sections (Plano de Arquitectura) -->
+  <section class="section-padding" id="ficha-tecnica">
+    <div class="section-header reveal">
+      <p class="section-subtitle">Datos técnicos de precisión</p>
+      <h2 class="section-title">Ficha Técnica del Proyecto</h2>
+    </div>
+    
+    <!-- Navigation Tabs -->
+    <ul class="spec-tabs reveal" role="tablist">
+      <li role="presentation"><button class="spec-tab-btn active" data-tab="areas" role="tab" aria-selected="true" aria-controls="pane-areas">Cuadro de Áreas</button></li>
+      <li role="presentation"><button class="spec-tab-btn" data-tab="linderos" role="tab" aria-selected="false" aria-controls="pane-linderos">Cantidades de Linderos</button></li>
+      <li role="presentation"><button class="spec-tab-btn" data-tab="vias" role="tab" aria-selected="false" aria-controls="pane-vias">Vías y Pendientes</button></li>
+      <li role="presentation"><button class="spec-tab-btn" data-tab="senderos" role="tab" aria-selected="false" aria-controls="pane-senderos">Senderos Ecológicos</button></li>
+    </ul>
+    
+    <!-- Area specifications (Simplified) -->
+    <div class="spec-content-pane active" id="pane-areas" role="tabpanel" aria-labelledby="tab-areas">
+      <div class="spec-visual-layout">
+        <div class="spec-visual-media">
+          <div class="spec-visual-img" style="background-image: url('assets/img/IMG_4682.jpg');"></div>
+        </div>
+        <div class="spec-visual-info">
+          <h3 style="font-family: var(--font-display); font-size: 2rem; font-weight: 400;">Distribución del Territorio</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.92rem; line-height: 1.7;">
+            La Senda se extiende sobre un globo de terreno de <strong>24.6 Hectáreas</strong> de topografía ondulada típica del suroeste antioqueño. La parcelación se ha diseñado con un índice de ocupación bajo, priorizando la preservación de los bosques nativos y las quebradas.
+          </p>
+          
+          <div class="segmented-bar-container">
+            <span class="segmented-bar-label">Uso del Suelo</span>
+            <div class="segmented-bar" role="img" aria-label="Distribución de área: 84% lotes privados, 13% zonas comunes y vías, 3% mall comercial">
+              <div class="bar-segment privado" style="width: 84.1%;" title="Lotes Privados (84.1%)"></div>
+              <div class="bar-segment comun" style="width: 13.3%;" title="Zonas Comunes (13.3%)"></div>
+              <div class="bar-segment comercial" style="width: 2.6%;" title="Mall Comercial (2.6%)"></div>
+            </div>
+          </div>
+          
+          <div class="bar-legend">
+            <div class="legend-item">
+              <div class="legend-bullet-wrapper">
+                <span class="legend-bullet privado"></span>
+                <span>62 Lotes Privados</span>
+              </div>
+              <strong>20.7 Ha (84.1%)</strong>
+            </div>
+            <div class="legend-item">
+              <div class="legend-bullet-wrapper">
+                <span class="legend-bullet comun"></span>
+                <span>Zonas Comunes y Vías</span>
+              </div>
+              <strong>3.3 Ha (13.3%)</strong>
+            </div>
+            <div class="legend-item">
+              <div class="legend-bullet-wrapper">
+                <span class="legend-bullet comercial"></span>
+                <span>Mall Comercial y Portería</span>
+              </div>
+              <strong>0.6 Ha (2.6%)</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Boundary specifications (Simplified) -->
+    <div class="spec-content-pane" id="pane-linderos" role="tabpanel" aria-labelledby="tab-linderos">
+      <div class="spec-visual-layout">
+        <div class="spec-visual-media">
+          <div class="spec-visual-img" style="background-image: url('assets/img/IMG_4649.jpg');"></div>
+        </div>
+        <div class="spec-visual-info">
+          <h3 style="font-family: var(--font-display); font-size: 2rem; font-weight: 400;">Linderos Orgánicos</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.92rem; line-height: 1.7;">
+            En coherencia con el respeto por la naturaleza, los límites entre parcelas evitan cercas de alambre rígidas o muros. La Senda utiliza <strong>linderos vivos</strong> a base de especies vegetales nativas (como Eugenias y Durantas) o accidentes topográficos naturales.
+          </p>
+          <div class="linderos-grid" style="grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+            <div class="lindero-stat-card" style="padding: 1.5rem 1rem;">
+              <div class="lindero-stat-num" style="font-size: 2rem; margin-bottom: 0.2rem;">10.4 km</div>
+              <div class="lindero-stat-label" style="font-size: 0.65rem; margin-bottom: 0; letter-spacing: 0.05em;">Linderos Privados</div>
+            </div>
+            <div class="lindero-stat-card" style="padding: 1.5rem 1rem;">
+              <div class="lindero-stat-num" style="font-size: 2rem; margin-bottom: 0.2rem;">2.9 km</div>
+              <div class="lindero-stat-label" style="font-size: 0.65rem; margin-bottom: 0; letter-spacing: 0.05em;">Lindero General</div>
+            </div>
+          </div>
+          <div style="background-color: var(--color-card-bg); padding: 1.2rem 1.5rem; border-radius: 12px; border: 1px solid var(--color-border-light); font-size: 0.82rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 12px;">
+            <i class="fa-solid fa-seedling" style="color: var(--color-primary-green); font-size: 1.2rem; flex-shrink: 0;"></i>
+            <span>Cada lote cuenta con amojonamiento topográfico de precisión certificado por GPS.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Roads/Slopes specifications (Simplified) -->
+    <div class="spec-content-pane" id="pane-vias" role="tabpanel" aria-labelledby="tab-vias">
+      <div class="spec-visual-layout">
+        <div class="spec-visual-media">
+          <div class="spec-visual-img" style="background-image: url('assets/img/IMG_4592.jpg');"></div>
+        </div>
+        <div class="spec-visual-info">
+          <h3 style="font-family: var(--font-display); font-size: 2rem; font-weight: 400;">Adaptación Vial a la Pendiente</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.92rem; line-height: 1.7;">
+            El relieve montañoso del suroeste exige una ingeniería vial inteligente. Para mitigar la erosión, se construyen <strong>2.7 km de vías internas</strong> pavimentadas con materiales específicos adaptados a la inclinación del terreno.
+          </p>
+          
+          <div class="vias-profile-container" style="margin-top: 1rem;">
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; border-bottom: 1px solid var(--color-border-light); padding-bottom: 5px;">
+                <span>Pendientes Planas (&lt;10%)</span>
+                <strong style="color: var(--color-primary-green);">Afirmado Compacto y Acribado (1,416.6 m)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; border-bottom: 1px solid var(--color-border-light); padding-bottom: 5px;">
+                <span>Pendiente Moderada (11%-16%)</span>
+                <strong style="color: var(--color-primary-green);">Adoquín o Asfalto (617.1 m)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; border-bottom: 1px solid var(--color-border-light); padding-bottom: 5px;">
+                <span>Pendientes Pronunciadas (&gt;16%)</span>
+                <strong style="color: var(--color-primary-green);">Rieles y Placa Huella (717.4 m)</strong>
+              </div>
+            </div>
+          </div>
+          
+          <div style="font-size: 0.8rem; color: var(--color-text-muted); font-style: italic;">
+            *Este método reduce la velocidad de escorrentía de aguas lluvias, garantizando accesibilidad total bajo cualquier clima.
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Trails specifications (Simplified) -->
+    <div class="spec-content-pane" id="pane-senderos" role="tabpanel" aria-labelledby="tab-senderos">
+      <div class="spec-visual-layout">
+        <div class="spec-visual-media">
+          <div class="spec-visual-img" style="background-image: url('assets/img/IMG_4638.jpg');"></div>
+        </div>
+        <div class="spec-visual-info">
+          <h3 style="font-family: var(--font-display); font-size: 2rem; font-weight: 400;">Caminos del Silencio y el Agua</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.92rem; line-height: 1.7;">
+            La Senda integra <strong>1.8 km de senderos peatonales</strong> de 1.20 m de ancho, diseñados para la inmersión forestal y aislados completamente del tráfico de vehículos.
+          </p>
+          
+          <div class="trails-cards-grid">
+            <!-- Trail 1 -->
+            <div class="trail-card-simple">
+              <div class="trail-icon-circle"><i class="fa-solid fa-water"></i></div>
+              <div class="trail-info-simple">
+                <h4>Ruta del Agua (Calma)</h4>
+                <p>Parque lineal y decks a lo largo de la quebrada nativa.</p>
+              </div>
+              <div class="trail-meta-simple">
+                <div class="trail-length-simple">407 m</div>
+                <div class="trail-diff-simple">Dificultad Baja</div>
+              </div>
+            </div>
+            
+            <!-- Trail 2 -->
+            <div class="trail-card-simple">
+              <div class="trail-icon-circle"><i class="fa-solid fa-mountain"></i></div>
+              <div class="trail-info-simple">
+                <h4>Ruta de la Montaña (Movimiento)</h4>
+                <p>Ascenso exigente y mirador con deck elevado.</p>
+              </div>
+              <div class="trail-meta-simple">
+                <div class="trail-length-simple">329 m</div>
+                <div class="trail-diff-simple">Dificultad Alta</div>
+              </div>
+            </div>
+            
+            <!-- Trail 3 -->
+            <div class="trail-card-simple">
+              <div class="trail-icon-circle"><i class="fa-solid fa-people-group"></i></div>
+              <div class="trail-info-simple">
+                <h4>Ruta del Encuentro (Conexión)</h4>
+                <p>Une la portería, el mall comercial y las zonas de fogatas.</p>
+              </div>
+              <div class="trail-meta-simple">
+                <div class="trail-length-simple">432 m</div>
+                <div class="trail-diff-simple">Dificultad Baja</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collapsible Technical Sheets Panel -->
+    <div class="collapse-trigger-container reveal">
+      <button class="btn-collapse-trigger" id="btn-toggle-technical" type="button" aria-expanded="false" aria-controls="technical-details-collapse">
+        Ver Ficha Técnica Completa <i class="fa-solid fa-chevron-down"></i>
+      </button>
+    </div>
+    
+    <div class="technical-details-panel" id="technical-details-collapse" aria-hidden="true">
+      <div style="background-color: var(--color-card-bg); border: 1px solid var(--color-border-light); border-radius: 20px; padding: 2.5rem; margin-top: 1rem; box-shadow: var(--shadow-editorial); overflow-x: auto;">
+        <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 2rem; text-align: center; color: var(--color-text-dark);">Cuadros de Ingeniería y Mediciones Completas</h3>
+        
+        <!-- Tablas de detalle originales -->
+        <div style="display: flex; flex-direction: column; gap: 3rem;">
+          <!-- Tabla de Áreas Completa -->
+          <div>
+            <h4 style="font-family: var(--font-body); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; color: var(--color-accent-gold); letter-spacing: 0.1em; margin-bottom: 1rem; border-bottom: 1px solid var(--color-border-light); padding-bottom: 0.5rem;">Cuadro General de Áreas</h4>
+            <table class="areas-table">
+              <thead>
+                <tr>
+                  <th scope="col">Ítem de Zonificación</th>
+                  <th scope="col" style="text-align: right;">Área Total (m²)</th>
+                  <th scope="col" style="text-align: right;">Ubicación / Etapa</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="category-row"><td colspan="3">Área Comercial</td></tr>
+                <tr>
+                  <td>Mall Comercial (Locales y Social)</td>
+                  <td style="text-align: right;">4,044.5</td>
+                  <td style="text-align: right;">Etapa 1</td>
+                </tr>
+                <tr>
+                  <td>Parqueadero Mall Comercial</td>
+                  <td style="text-align: right;">2,102.8</td>
+                  <td style="text-align: right;">Etapa 1</td>
+                </tr>
+                <tr class="category-row"><td colspan="3">Zonas Comunes (Vías, Senderos y Servicios)</td></tr>
+                <tr>
+                  <td>Comunes Etapa 1 (Portería, PTAR 1, Senderos, Vías)</td>
+                  <td style="text-align: right;">7,295.5</td>
+                  <td style="text-align: right;">Etapa 1</td>
+                </tr>
+                <tr>
+                  <td>Comunes Etapa 2 (Parqueadero, PTAR 2, Mirador, Senderos, Vías)</td>
+                  <td style="text-align: right;">13,317.0</td>
+                  <td style="text-align: right;">Etapa 2</td>
+                </tr>
+                <tr>
+                  <td>Comunes Etapa 3 (Parqueadero, Parque Lineal, Estancia, Vías, Senderos)</td>
+                  <td style="text-align: right;">12,298.5</td>
+                  <td style="text-align: right;">Etapa 3</td>
+                </tr>
+                <tr class="category-row"><td colspan="3">Área Privada (Lotes)</td></tr>
+                <tr>
+                  <td>62 Lotes Privados</td>
+                  <td style="text-align: right;">207,156.8</td>
+                  <td style="text-align: right;">Etapas 1, 2 y 3</td>
+                </tr>
+                <tr class="total-row">
+                  <td>Área Total Construible</td>
+                  <td style="text-align: right; font-weight: 700;">246,215.1</td>
+                  <td style="text-align: right; color: var(--color-primary-green); font-weight: 700;">100% Predio</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <!-- Tabla de Linderos Completa -->
+          <div>
+            <h4 style="font-family: var(--font-body); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; color: var(--color-accent-gold); letter-spacing: 0.1em; margin-bottom: 1rem; border-bottom: 1px solid var(--color-border-light); padding-bottom: 0.5rem;">Cálculo de Linderos Perimetrales</h4>
+            <table class="areas-table">
+              <thead>
+                <tr>
+                  <th scope="col">Tramo de Lindero</th>
+                  <th scope="col" style="text-align: right;">Longitud (m)</th>
+                  <th scope="col" style="text-align: right;">Etapa Asociada</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Linderos Totales Etapa 1 (20 Lotes)</td>
+                  <td style="text-align: right;">3,522.7</td>
+                  <td style="text-align: right;">Etapa 1</td>
+                </tr>
+                <tr>
+                  <td>Linderos Totales Etapa 2 (21 Lotes)</td>
+                  <td style="text-align: right;">3,482.3</td>
+                  <td style="text-align: right;">Etapa 2</td>
+                </tr>
+                <tr>
+                  <td>Linderos Totales Etapa 3 (21 Lotes)</td>
+                  <td style="text-align: right;">3,436.1</td>
+                  <td style="text-align: right;">Etapa 3</td>
+                </tr>
+                <tr class="total-row">
+                  <td>Cerramiento General del Predio</td>
+                  <td style="text-align: right; font-weight: 700;">2,909.4</td>
+                  <td style="text-align: right; color: var(--color-primary-green); font-weight: 700;">Seguridad Perimetral</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <!-- Tabla de Vías Completa -->
+          <div>
+            <h4 style="font-family: var(--font-body); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; color: var(--color-accent-gold); letter-spacing: 0.1em; margin-bottom: 1rem; border-bottom: 1px solid var(--color-border-light); padding-bottom: 0.5rem;">Pavimentación e Inclinación Vial</h4>
+            <table class="areas-table">
+              <thead>
+                <tr>
+                  <th scope="col">Tipo de Pendiente</th>
+                  <th scope="col">Tipo de Pavimento sugerido</th>
+                  <th scope="col" style="text-align: right;">Longitud (m)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>0% - 5% (Pendiente Plana)</td>
+                  <td>Afirmado Compacto</td>
+                  <td style="text-align: right;">779.0</td>
+                </tr>
+                <tr>
+                  <td>6% - 10% (Pendiente Suave)</td>
+                  <td>Acribado Seleccionado</td>
+                  <td style="text-align: right;">637.6</td>
+                </tr>
+                <tr>
+                  <td>11% - 16% (Pendiente Moderada)</td>
+                  <td>Adoquín o Asfalto</td>
+                  <td style="text-align: right;">617.1</td>
+                </tr>
+                <tr>
+                  <td>16% - 20% (Pendiente Fuerte)</td>
+                  <td>Rieles de Concreto</td>
+                  <td style="text-align: right;">245.3</td>
+                </tr>
+                <tr>
+                  <td>&ge; 20% (Pendiente Crítica)</td>
+                  <td>Placa Huella Reforzada</td>
+                  <td style="text-align: right;">472.1</td>
+                </tr>
+                <tr class="total-row">
+                  <td>Malla Vial Total Construida</td>
+                  <td>Pavimentos Adaptados</td>
+                  <td style="text-align: right; font-weight: 700;">2,751.1</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <!-- Tabla de Senderos Completa -->
+          <div>
+            <h4 style="font-family: var(--font-body); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; color: var(--color-accent-gold); letter-spacing: 0.1em; margin-bottom: 1rem; border-bottom: 1px solid var(--color-border-light); padding-bottom: 0.5rem;">Detalle de Tramos de Senderos Peatonales</h4>
+            <table class="areas-table">
+              <thead>
+                <tr>
+                  <th scope="col">Tramo de Sendero</th>
+                  <th scope="col" style="text-align: right;">Longitud (m)</th>
+                  <th scope="col" style="text-align: right;">Etapa del Proyecto</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sendero Principal del Encuentro</td>
+                  <td style="text-align: right;">432.1</td>
+                  <td style="text-align: right;">Etapa 1</td>
+                </tr>
+                <tr>
+                  <td>Sendero de los Miradores Bajos</td>
+                  <td style="text-align: right;">165.6</td>
+                  <td style="text-align: right;">Etapa 1</td>
+                </tr>
+                <tr>
+                  <td>Sendero Conexión Portería-Mall</td>
+                  <td style="text-align: right;">118.0</td>
+                  <td style="text-align: right;">Etapa 1</td>
+                </tr>
+                <tr>
+                  <td>Acceso a Estaciones de Yoga</td>
+                  <td style="text-align: right;">8.2</td>
+                  <td style="text-align: right;">Etapa 1</td>
+                </tr>
+                <tr>
+                  <td>Sendero del Ascenso al Mirador</td>
+                  <td style="text-align: right;">329.4</td>
+                  <td style="text-align: right;">Etapa 2</td>
+                </tr>
+                <tr>
+                  <td>Ruta de la Quebrada Media</td>
+                  <td style="text-align: right;">219.4</td>
+                  <td style="text-align: right;">Etapa 2</td>
+                </tr>
+                <tr>
+                  <td>Conexión Bosque Central</td>
+                  <td style="text-align: right;">170.2</td>
+                  <td style="text-align: right;">Etapa 2</td>
+                </tr>
+                <tr>
+                  <td>Paseo del Parque Lineal Equino</td>
+                  <td style="text-align: right;">407.0</td>
+                  <td style="text-align: right;">Etapa 3</td>
+                </tr>
+                <tr class="total-row">
+                  <td>Longitud Total de Caminos</td>
+                  <td style="text-align: right; font-weight: 700;">1,849.9</td>
+                  <td style="text-align: right; color: var(--color-primary-green); font-weight: 700;">100% Peatonal</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Organic SVG Divider -->
+  <div class="svg-organic-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C120,70 240,10 360,50 C480,90 600,20 720,45 C840,70 960,10 1080,40 C1200,70 1320,20 1440,50 L1440,90 L0,90 Z" fill="var(--color-bg-main)"/>
+    </svg>
+    <div class="svg-divider-logo-mark">
+      <img src="assets/img/logo_lasenda.png" alt="" class="divider-icon-img">
+    </div>
+  </div>
+
+  <!-- Interactive Lotes Finder & Grid -->
+  <section class="section-padding lotes-section" id="lotes">
+    <div class="section-header reveal">
+      <p class="section-subtitle">Elige tu parcela</p>
+      <h2 class="section-title">Tu terreno te espera</h2>
+      <p style="color: var(--color-text-muted); max-width: 560px; margin: 1rem auto 0; font-size: 0.95rem;">62 parcelas de entre 3,000 y 5,000 m² distribuidas en tres sendas. Cada lote es una promesa de silencio, bosque y pertenencia.</p>
+    </div>
+
+    <!-- Featured Lot Preview Cards -->
+    <div class="lotes-preview-grid reveal">
+      <!-- Preview card 1: Etapa 1 -->
+      <div class="lote-preview-card" style="--prev-color: #AE5D1F;" onclick="document.getElementById('lotes-full-panel').style.display='block'; document.getElementById('btn-ver-lotes').style.display='none'; setTimeout(()=>document.getElementById('lotes-full-panel').scrollIntoView({behavior:'smooth'}), 80);">
+        <div class="lote-prev-img" style="background-image: url('assets/img/IMG_4619.jpg');"></div>
+        <div class="lote-prev-body">
+          <span class="lote-prev-etapa">Etapa I · Encuentro</span>
+          <div class="lote-prev-stat"><span>20 lotes</span><span>~3,200 m² prom.</span></div>
+          <p class="lote-prev-desc">Los lotes más cercanos al acceso y al área social. Ideales para quienes valoran la conexión y la comunidad.</p>
+        </div>
+      </div>
+      <!-- Preview card 2: Etapa 2 -->
+      <div class="lote-preview-card" style="--prev-color: #C27D38;" onclick="document.getElementById('lotes-full-panel').style.display='block'; document.getElementById('btn-ver-lotes').style.display='none'; setTimeout(()=>document.getElementById('lotes-full-panel').scrollIntoView({behavior:'smooth'}), 80);">
+        <div class="lote-prev-img" style="background-image: url('assets/img/IMG_4682.jpg');"></div>
+        <div class="lote-prev-body">
+          <span class="lote-prev-etapa">Etapa II · Movimiento</span>
+          <div class="lote-prev-stat"><span>21 lotes</span><span>~4,100 m² prom.</span></div>
+          <p class="lote-prev-desc">Emplazados en la vertiente de la montaña, con visuales hacia el mirador y el valle del suroeste.</p>
+        </div>
+      </div>
+      <!-- Preview card 3: Etapa 3 -->
+      <div class="lote-preview-card" style="--prev-color: #3E8A7E;" onclick="document.getElementById('lotes-full-panel').style.display='block'; document.getElementById('btn-ver-lotes').style.display='none'; setTimeout(()=>document.getElementById('lotes-full-panel').scrollIntoView({behavior:'smooth'}), 80);">
+        <div class="lote-prev-img" style="background-image: url('assets/img/IMG_4649.jpg');"></div>
+        <div class="lote-prev-body">
+          <span class="lote-prev-etapa">Etapa III · Calma</span>
+          <div class="lote-prev-stat"><span>21 lotes</span><span>~4,800 m² prom.</span></div>
+          <p class="lote-prev-desc">Los más extensos y remotos. Rodeados de bosque nativo y la quebrada. Para quienes buscan el silencio total.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA to reveal full grid -->
+    <div class="lotes-cta-reveal reveal" id="btn-ver-lotes">
+      <button class="btn-ver-todos" onclick="document.getElementById('lotes-full-panel').style.display='block'; this.parentElement.style.display='none'; setTimeout(()=>document.getElementById('lotes-full-panel').scrollIntoView({behavior:'smooth'}), 80);">
+        <i class="fa-solid fa-grip"></i> Ver todos los lotes disponibles
+      </button>
+      <p class="lotes-cta-hint">62 parcelas · 3 etapas · Precios desde consulta</p>
+    </div>
+
+    <!-- Full Inventory (hidden by default) -->
+    <div class="lotes-full-panel" id="lotes-full-panel" style="display:none;">
+      <!-- Filters Panel -->
+      <div class="lotes-filters">
+        <div class="filter-group" role="group" aria-label="Filtrar lotes por etapa o lanzamiento">
+          <button class="filter-btn active" data-filter="all">Todos los Lotes</button>
+          <button class="filter-btn" data-filter="1" style="--stage-color: #AE5D1F;">Etapa 1 (Encuentro)</button>
+          <button class="filter-btn" data-filter="2" style="--stage-color: #C27D38;">Etapa 2 (Movimiento)</button>
+          <button class="filter-btn" data-filter="3" style="--stage-color: #3E8A7E;">Etapa 3 (Calma)</button>
+          <button class="filter-btn" data-filter="featured"><i class="fa-solid fa-star" style="color: var(--color-accent-gold); margin-right: 5px;"></i> Lanzamiento</button>
+        </div>
+        
+        <div class="filter-group">
+          <div class="search-input-wrapper">
+            <input type="text" class="search-input" id="search-lote" placeholder="Buscar lote (ej. Lote 05)" aria-label="Buscar lote por nombre o número">
+            <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+          </div>
+          
+          <select class="filter-btn" id="sort-lotes" style="padding: 0.6rem 2.2rem 0.6rem 1.4rem;" aria-label="Ordenar lotes">
+            <option value="num-asc">Lote (Menor a Mayor)</option>
+            <option value="num-desc">Lote (Mayor a Menor)</option>
+            <option value="area-desc">Área (Mayor a Menor)</option>
+            <option value="area-asc">Área (Menor a Mayor)</option>
+          </select>
+        </div>
+      </div>
+      
+      <!-- Lotes Grid -->
+      <div class="lotes-grid-container">
+        <div class="lotes-grid" id="lotes-grid" aria-live="polite">
+          <!-- Dynamically generated by JS -->
+        </div>
+      </div>
+
+      <!-- Collapse button -->
+      <div style="text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border-light);">
+        <button class="btn-ver-todos" style="background: transparent; border: 2px solid var(--color-border-light); color: var(--color-text-muted);" onclick="document.getElementById('lotes-full-panel').style.display='none'; document.getElementById('btn-ver-lotes').style.display='flex'; document.getElementById('lotes').scrollIntoView({behavior:'smooth'});">
+          <i class="fa-solid fa-chevron-up"></i> Ocultar inventario
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lote Detail Modal (Ficha Catastral de Diseño) -->
+  <div class="modal" id="lote-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title-num">
+    <div class="modal-content">
+      <button class="close-modal" id="close-modal" aria-label="Cerrar ventana de detalles"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-title-num" id="modal-title-num" tabindex="-1">Lote 01</div>
+      <span class="modal-stage-badge" id="modal-stage-badge">Etapa 1</span>
+      <div class="modal-image-header" id="modal-image-header"></div>
+      
+      <div class="modal-specs-list">
+        <div>
+          <div class="modal-spec-label">Área Privada</div>
+          <div class="modal-spec-val" id="modal-spec-area">3013.2 m²</div>
+        </div>
+        <div>
+          <div class="modal-spec-label">Linderos Aprox.</div>
+          <div class="modal-spec-val" id="modal-spec-boundaries">176.1 m</div>
+        </div>
+      </div>
+      
+      <div class="modal-recommendation">
+        <h4 id="modal-recommendation-title">Recomendación de Estilo de Vida</h4>
+        <p id="modal-recommendation-text">Cargando...</p>
+      </div>
+      
+      <button class="btn-submit" id="modal-btn-contact" onclick="document.getElementById('lote-modal').classList.remove('active'); document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})">Me interesa este Lote</button>
+    </div>
+  </div>
+
+  <!-- Contact & Registration Form -->
+  <section class="section-padding contact-section" id="contacto">
+    <div class="contact-grid">
+      <!-- Info Col -->
+      <div class="contact-info reveal">
+        <h2 class="contact-info-title">Comienza tu senda hoy</h2>
+        <p class="contact-info-desc">La Senda no es simplemente un terreno; es el privilegio de pertenecer a un hábitat consciente y planificado por arquitectos. Coordina tu recorrido personalizado.</p>
+        
+        <div class="contact-details">
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+            <div class="contact-detail-text">
+              <h4>Ubicación del Proyecto</h4>
+              <p>Titiribí, Suroeste Antioqueño, Colombia (Sobre la vía 4G Pacífico 1)</p>
+            </div>
+          </div>
+          
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contact-detail-text">
+              <h4>Correo de Contacto</h4>
+              <p>ventas@lasendasuroeste.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="contact-detail-text">
+              <h4>Atención Comercial</h4>
+              <p>+57 301 234 5678</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Form Col -->
+      <form class="contact-form reveal" id="lead-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" class="form-control" placeholder="Escribe tu nombre" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Correo Electrónico</label>
+            <input type="email" id="email" class="form-control" placeholder="Escribe tu correo" required aria-required="true">
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="telefono">Celular / WhatsApp</label>
+            <input type="tel" id="telefono" class="form-control" placeholder="Número de contacto" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="interes">Senda de Interés</label>
+            <select id="interes" class="form-control" aria-label="Selecciona tu senda de interés">
+              <option value="calma">Senda de la Calma (Etapa 3)</option>
+              <option value="movimiento">Senda del Movimiento (Etapa 2)</option>
+              <option value="encuentro">Senda del Encuentro (Etapa 1)</option>
+              <option value="general">Información General del Proyecto</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group full-width">
+          <label class="form-label" for="mensaje">Mensaje Especial</label>
+          <textarea id="mensaje" class="form-control" placeholder="¿Tienes alguna solicitud especial o deseas agendar una fecha? Escríbela aquí..."></textarea>
+        </div>
+        
+        <button type="submit" class="btn-submit">Enviar Solicitud</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>LA SENDA®</h3>
+        <p>Un proyecto parcelario único en el Suroeste Antioqueño. Conexión natural, urbanismo responsable y alta valorización.</p>
+        <div class="footer-partners">
+          <img src="assets/img/logo_cntxt.png" alt="CNTXT Logo" class="partner-logo" title="Diseño y Arquitectura">
+          <img src="assets/img/logo_origen21.jpg" alt="Origen 21 Logo" class="partner-logo" title="Aliados Comerciales">
+        </div>
+      </div>
+      
+      <div class="footer-links-col">
+        <h4>Navegación</h4>
+        <ul class="footer-links">
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#manifiesto">Manifiesto</a></li>
+          <li><a href="#elige-tu-senda">Elige tu Senda</a></li>
+          <li><a href="#ficha-tecnica">Ficha Técnica</a></li>
+          <li><a href="#lotes">Inventario</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links-col">
+        <h4>Legales</h4>
+        <ul class="footer-links">
+          <li><a href="#">Términos de Venta</a></li>
+          <li><a href="#">Tratamiento de Datos</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="#">Diseño por CNTXT</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 La Senda S.A.S. Todos los derechos reservados. Los planos, renders e información técnica son de carácter ilustrativo.</p>
+      <p>Titiribí, Antioquia, Colombia</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="assertive"></div>
+
+  <!-- Javascript File -->
+  <script src="index.js?v=4"></script>
+</body>
+</html>
