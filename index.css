@@ -2408,9 +2408,9 @@ footer {
 
 .video-cinematic-inner {
   position: relative;
-  height: 85vh;
-  min-height: 520px;
-  max-height: 900px;
+  height: 92vh; /* Increased from 85vh */
+  min-height: 620px; /* Increased from 520px */
+  max-height: 1000px; /* Increased from 900px */
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -2654,7 +2654,7 @@ footer {
   }
 
   .video-cinematic-inner {
-    height: 70vh;
+    height: 82vh; /* Increased from 70vh */
   }
 
   .svg-organic-divider {
@@ -2693,19 +2693,18 @@ footer {
   border: 1px solid var(--color-border-light);
   overflow: hidden;
   background-color: #fff;
-  aspect-ratio: 16 / 9;
+  /* Dynamic height, no fixed aspect ratio so blueprint is fully visible and large */
 }
 
 .planta-link {
   display: block;
   width: 100%;
-  height: 100%;
 }
 
 .planta-img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: auto;
+  display: block;
   transition: var(--transition-smooth);
 }
 
@@ -2787,10 +2786,6 @@ footer {
 @media (max-width: 768px) {
   .planta-visual-wrapper {
     padding: 1.5rem;
-  }
-  .planta-frame {
-    aspect-ratio: auto;
-    height: 300px;
   }
   .planta-info-footer {
     flex-direction: column;
