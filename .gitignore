@@ -14,7 +14,6 @@ assets/img/render_*.png
 # Video original sin comprimir (se usa trailer_web.mp4)
 assets/img/trailer.mp4
 assets/img/campo.mp4
-assets/img/la_senda_invitacion.mp4
 
 # Git
 *.orig
@@ -26,3 +25,7 @@ desktop.ini
 *.swp
 *.swo
 .vscode/
+
+# Original untracked video
+LA SENDA_INVITACIÓN.mp4
+LA SENDA_*.mp4
