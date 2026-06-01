@@ -715,7 +715,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       });
     }, {
-      root: document.querySelector(".scroll-container") || null,
+      root: window.innerWidth > 768 ? document.querySelector(".scroll-container") : null,
       threshold: 0.05,
       rootMargin: "0px 0px -40px 0px"
     });
