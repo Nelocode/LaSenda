@@ -14,13 +14,16 @@
   <meta property="og:title" content="La Senda® | El privilegio de pertenecer">
   <meta property="og:description" content="Exclusivos lotes campestres desde 3,000 m² en el Suroeste Antioqueño, combinando desconexión natural y conectividad moderna a minutos de Medellín.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/img/encuentro_1.jpg">
+  <meta property="og:image" content="assets/img/encuentro_1.webp">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
   
+  <!-- LCP Background Preload -->
+  <link rel="preload" as="image" href="assets/img/IMG_4682.webp" fetchpriority="high" type="image/webp">
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="index.css?v=23">
   
@@ -33,7 +36,7 @@
   <header id="main-header">
     <div class="nav-container">
       <a href="#" class="logo-link">
-        <img src="assets/img/logo_horizontal.png" alt="La Senda Logo" class="logo-img">
+        <img src="assets/img/logo_horizontal.webp" alt="La Senda Logo" class="logo-img" fetchpriority="high">
       </a>
       
       <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-links">
@@ -57,7 +60,7 @@
 
     <!-- Section 1: Hero (Full-Screen Book Cover) -->
     <section class="section hero-section" id="hero" style="scroll-snap-align: start;">
-      <div class="hero-cover-bg" id="hero-bg" style="background-image: url('assets/img/IMG_4682.jpg');"></div>
+      <div class="hero-cover-bg" id="hero-bg" style="background-image: url('assets/img/IMG_4682.webp');"></div>
       <div class="hero-cover-overlay"></div>
       
       <div class="hero-layout">
@@ -93,7 +96,7 @@
         <!-- Left: Arched Image Window -->
         <div class="manifesto-media-col reveal">
           <div class="manifesto-arch-window">
-            <div class="manifesto-window-img" style="background-image: url('assets/img/IMG_4658.jpg');"></div>
+            <div class="manifesto-window-img" style="background-image: url('assets/img/IMG_4658.webp');"></div>
           </div>
           <div class="manifesto-caption">El murmullo de la quebrada nativa y el silencio de la montaña en Titiribí</div>
         </div>
@@ -156,7 +159,7 @@
         
         <!-- Cuerpo 1: Encuentro -->
         <div class="senda-card triptych-col" data-senda="encuentro" style="--stage-color: #2B7A8C;" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">
-          <div class="triptych-bg" style="background-image: url('assets/img/IMG_4619.jpg');"></div>
+          <div class="triptych-bg" style="background-image: url('assets/img/IMG_4619.webp');"></div>
           <div class="triptych-overlay"></div>
           <div class="triptych-content">
             <span class="triptych-tag">ETAPA I &bull; DEL AGUA</span>
@@ -168,7 +171,7 @@
         
         <!-- Cuerpo 2: Movimiento -->
         <div class="senda-card triptych-col active" data-senda="movimiento" style="--stage-color: #3D5C34;" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">
-          <div class="triptych-bg" style="background-image: url('assets/img/IMG_4684.jpg');"></div>
+          <div class="triptych-bg" style="background-image: url('assets/img/IMG_4684.webp');"></div>
           <div class="triptych-overlay"></div>
           <div class="triptych-content">
             <span class="triptych-tag">ETAPA II &bull; DEL BOSQUE</span>
@@ -180,7 +183,7 @@
         
         <!-- Cuerpo 3: Calma -->
         <div class="senda-card triptych-col" data-senda="calma" style="--stage-color: #9A7D45;" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">
-          <div class="triptych-bg" style="background-image: url('assets/img/IMG_4649.jpg');"></div>
+          <div class="triptych-bg" style="background-image: url('assets/img/IMG_4649.webp');"></div>
           <div class="triptych-overlay"></div>
           <div class="triptych-content">
             <span class="triptych-tag">ETAPA III &bull; DEL VIENTO</span>
@@ -229,7 +232,8 @@
     <!-- Cinematic Video Section -->
     <section class="section video-cinematic-section" id="video-territorio" style="scroll-snap-align: start;">
       <div class="video-cinematic-inner">
-        <video class="video-bg" autoplay muted loop playsinline poster="assets/img/IMG_4682.jpg">
+        <video class="video-bg" autoplay muted loop playsinline poster="assets/img/IMG_4682.webp">
+          <source src="assets/img/trailer_web_mobile.mp4" type="video/mp4" media="(max-width: 768px)">
           <source src="assets/img/trailer_web.mp4" type="video/mp4">
         </video>
         <div class="video-overlay"></div>
@@ -329,7 +333,7 @@
         <div class="specs-plan-col reveal">
           <div class="plan-visual-card">
             <div class="plan-img-wrapper">
-              <img src="assets/img/planta_comercial.png" alt="Planta de Distribución Arquitectónica La Senda" class="plan-img">
+              <img src="assets/img/planta_comercial.webp" alt="Planta de Distribución Arquitectónica La Senda" class="plan-img" loading="lazy">
             </div>
             <div class="plan-info">
               <h3>Plano de Distribución y Planimetría</h3>
@@ -493,7 +497,7 @@
         <!-- Right: Info & Partners & Minimalist Footer -->
         <div class="contact-info-col reveal">
           <div class="contact-info-block">
-            <img src="assets/img/logo_white_vertical.png" alt="La Senda" class="contact-brand-logo">
+            <img src="assets/img/logo_white_vertical.webp" alt="La Senda" class="contact-brand-logo" loading="lazy">
             <p class="brand-philosophy">Un proyecto parcelario único en el Suroeste Antioqueño. Conexión natural, urbanismo responsable y alta valorización.</p>
             
             <div class="contact-channels">
@@ -514,8 +518,8 @@
             </div>
             
             <div class="footer-partners">
-              <img src="assets/img/logo_cntxt.png" alt="CNTXT Logo" class="partner-logo" title="Diseño y Arquitectura">
-              <img src="assets/img/logo_origen21.jpg" alt="Origen 21 Logo" class="partner-logo" title="Aliados Comerciales">
+              <img src="assets/img/logo_cntxt.webp" alt="CNTXT Logo" class="partner-logo" title="Diseño y Arquitectura" loading="lazy">
+              <img src="assets/img/logo_origen21.webp" alt="Origen 21 Logo" class="partner-logo" title="Aliados Comerciales" loading="lazy">
             </div>
             
             <div class="footer-meta">

@@ -267,11 +267,11 @@ html, body {
 }
 
 .curves-dark {
-  background-image: url('assets/img/curves_dark_overlay.png');
+  background-image: url('assets/img/curves_dark_overlay.webp');
 }
 
 .curves-light {
-  background-image: url('assets/img/curves_light_overlay.png');
+  background-image: url('assets/img/curves_light_overlay.webp');
   opacity: 0.08;
 }
 

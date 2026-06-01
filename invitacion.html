@@ -10,7 +10,7 @@
   <meta property="og:title" content="Invitación Exclusiva | La Senda®">
   <meta property="og:description" content="Lanzamiento privado de parcelas premium. Confirma tu asistencia y agenda el evento.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/img/encuentro_1.jpg">
+  <meta property="og:image" content="assets/img/encuentro_1.webp">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +20,9 @@
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
+  <!-- Poster Image Preload -->
+  <link rel="preload" as="image" href="assets/img/encuentro_1.webp" fetchpriority="high" type="image/webp">
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="invitacion.css">
 </head>
@@ -31,8 +34,8 @@
     <!-- SECCIÓN 1: EL VIDEO (Protagonista de la Portada) -->
     <section class="scroll-section" id="origin">
       <div class="video-container">
-        <video class="hero-video" id="hero-video" autoplay muted playsinline poster="assets/img/encuentro_1.jpg">
-          <source src="assets/img/la_senda_invitacion.mp4" type="video/mp4">
+        <video class="hero-video" id="hero-video" autoplay muted playsinline poster="assets/img/encuentro_1.webp">
+          <source src="assets/img/la_senda_invitacion_optimized.mp4" type="video/mp4">
           Tu navegador no soporta reproducción de video.
         </video>
       </div>
@@ -56,7 +59,7 @@
           <p class="message-text animate-fade-in-up delay-2">Un llamado de retorno a lo esencial, el silencio y la naturaleza en el Suroeste Antioqueño.</p>
           
           <div class="message-divider animate-fade-in-up delay-2">
-            <img src="assets/img/logo_monograma.png" alt="Isotipo La Senda" class="message-divider-icon">
+            <img src="assets/img/logo_monograma.webp" alt="Isotipo La Senda" class="message-divider-icon" loading="lazy">
           </div>
           
           <p class="message-subtext animate-fade-in-up delay-2">62 parcelas exclusivas diseñadas para conectar con el origen. Un refugio rodeado de bosques nativos, senderos y aguas puras en Titiribí.</p>
@@ -131,7 +134,7 @@
       <div class="section-content flex-center text-center">
         <div class="footer-wrap">
           <div class="nature-window-arch">
-            <div class="nature-window-img" style="background-image: url('assets/img/calma_2.jpg');"></div>
+            <div class="nature-window-img" style="background-image: url('assets/img/calma_2.webp');"></div>
           </div>
           
           <p class="footer-poetic">"La Senda no es solo un lugar, es la promesa de un reencuentro con el origen y la tierra."</p>
@@ -152,8 +155,8 @@
           <div class="footer-partners-credits">
             <span class="partners-label">Un proyecto de</span>
             <div class="partner-logos-row">
-              <img src="assets/img/logo_origen21.jpg" alt="ORIGEN 21" class="partner-logo-footer">
-              <img src="assets/img/logo_cntxt.png" alt="CNTXT" class="partner-logo-footer">
+              <img src="assets/img/logo_origen21.webp" alt="ORIGEN 21" class="partner-logo-footer" loading="lazy">
+              <img src="assets/img/logo_cntxt.webp" alt="CNTXT" class="partner-logo-footer" loading="lazy">
             </div>
           </div>
         </div>

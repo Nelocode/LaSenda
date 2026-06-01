@@ -79,21 +79,21 @@ const sendasData = {
     title: "Senda del Encuentro",
     subtitle: "Etapa I - Del Agua",
     story: "Inspirada en el ritual social y la vida comunitaria. Ubicada en la entrada de la parcelación, la Senda del Encuentro es el corazón social de La Senda. Aquí se destaca la portería robusta y el Mall Comercial, concebido para brindar conveniencia (café, panadería artesanal y canasta básica) sin alterar la paz residencial. Con una distribución de parqueos separada de las circulaciones de los propietarios, permite el flujo público ordenado e invita a compartir fogatas, picnics y mercados campesinos al aire libre.",
-    images: ["assets/img/render_encuentro_1.jpg", "assets/img/render_encuentro_2.jpg", "assets/img/render_encuentro_3.jpg", "assets/img/encuentro_1.jpg", "assets/img/encuentro_2.jpg", "assets/img/IMG_4619.jpg"],
+    images: ["assets/img/render_encuentro_1.webp", "assets/img/render_encuentro_2.webp", "assets/img/render_encuentro_3.webp", "assets/img/encuentro_1.webp", "assets/img/encuentro_2.webp", "assets/img/IMG_4619.webp"],
     amenities: ["Mall Comercial Integrado", "Parqueadero de Visitantes Ampliado", "Portería de Seguridad Robustecida 24/7", "Plaza de Fogatas & Socialización", "Senderos de Conexión Rápida", "Cafetería y Panadería de Pueblo"]
   },
   movimiento: {
     title: "Senda del Movimiento",
     subtitle: "Etapa II - Del Bosque",
     story: "Concebida para quienes se conectan con el territorio a través del esfuerzo físico y la exploración activa. Esta senda incluye un circuito completo de senderos deportivos con pendientes variables de baja, media y alta dificultad, adaptados de forma respetuosa al relieve natural sin explanaciones destructivas. El recorrido serpentea a través del bosque, ofreciendo estaciones de picnic, y culmina en la cima de la montaña con el Mirador Panorámico: un deck cubierto con zona de fogata (firepit) que regala visuales espectaculares del suroeste y Cerro Tusa.",
-    images: ["assets/img/render_movimiento_1.jpg", "assets/img/render_movimiento_2.jpg", "assets/img/render_movimiento_3.jpg", "assets/img/movimiento_1.jpg", "assets/img/movimiento_2.jpg", "assets/img/IMG_4684.jpg"],
+    images: ["assets/img/render_movimiento_1.webp", "assets/img/render_movimiento_2.webp", "assets/img/render_movimiento_3.webp", "assets/img/movimiento_1.webp", "assets/img/movimiento_2.webp", "assets/img/IMG_4684.webp"],
     amenities: ["Mirador Panorámico Elevado", "Deck Cubierto & Firepit Premium", "Senderos Deportivos de Montaña", "Estaciones de Hidratación", "Espacios de Picnic en el Bosque", "Conexión Directa a Rutas Outdoor"]
   },
   calma: {
     title: "Senda de la Calma",
     subtitle: "Etapa III - Del Viento",
     story: "Ubicada en el sector más íntimo y boscoso, es el refugio de la serenidad y la contemplación. Acompañada por el murmullo de la quebrada nativa, cuenta con un Parque Lineal con decks de madera diseñados para la meditación, yoga y desconexión total. El sendero del bosque culmina en una Estancia Equina especializada, diseñada para dueños de caballos y amantes de la equitación consciente, donde se puede pasear, interactuar y descansar en armonía con el entorno, totalmente aislado del tráfico de vehículos.",
-    images: ["assets/img/render_calma_1.jpg", "assets/img/render_calma_2.jpg", "assets/img/render_calma_3.jpg", "assets/img/calma_1.jpg", "assets/img/calma_2.jpg", "assets/img/IMG_4649.jpg", "assets/img/IMG_4648.jpg"],
+    images: ["assets/img/render_calma_1.webp", "assets/img/render_calma_2.webp", "assets/img/render_calma_3.webp", "assets/img/calma_1.webp", "assets/img/calma_2.webp", "assets/img/IMG_4649.webp", "assets/img/IMG_4648.webp"],
     amenities: ["Estancia Equina de Descanso", "Parque Lineal del Río", "Decks del Río (River Lounges)", "Yoga Mats & Estaciones Wellness", "Bosques Nativos de Preservación", "Senderos Exclusivos del Silencio"]
   }
 };
@@ -384,9 +384,9 @@ function renderLotesGrid() {
       </div>
     `;
   } else {
-    const stage1Photos = ["IMG_4586.jpg", "IMG_4588.jpg", "IMG_4590.jpg", "IMG_4591.jpg", "IMG_4675.jpg"];
-    const stage2Photos = ["IMG_4619.jpg", "IMG_4650.jpg", "IMG_4658.jpg", "IMG_4682.jpg", "IMG_4684.jpg", "IMG_4687.jpg"];
-    const stage3Photos = ["IMG_4592.jpg", "IMG_4593.jpg", "IMG_4595.jpg", "IMG_4626.jpg", "IMG_4638.jpg", "IMG_4648.jpg", "IMG_4649.jpg", "IMG_4663.jpg", "IMG_4667.jpg", "IMG_4668.jpg"];
+    const stage1Photos = ["IMG_4586.webp", "IMG_4588.webp", "IMG_4590.webp", "IMG_4591.webp", "IMG_4675.webp"];
+    const stage2Photos = ["IMG_4619.webp", "IMG_4650.webp", "IMG_4658.webp", "IMG_4682.webp", "IMG_4684.webp", "IMG_4687.webp"];
+    const stage3Photos = ["IMG_4592.webp", "IMG_4593.webp", "IMG_4595.webp", "IMG_4626.webp", "IMG_4638.webp", "IMG_4648.webp", "IMG_4649.webp", "IMG_4663.webp", "IMG_4667.webp", "IMG_4668.webp"];
     
     recommendedLotes.forEach(lote => {
       const card = document.createElement("div");
@@ -519,9 +519,9 @@ function openLoteModal(lote) {
   if (lote.stage === 3) boundariesVal = "163.6 m";
   modalSpecBoundaries.textContent = boundariesVal;
 
-  const stage1Images = ["assets/img/IMG_4586.jpg", "assets/img/IMG_4588.jpg", "assets/img/IMG_4590.jpg", "assets/img/IMG_4591.jpg", "assets/img/IMG_4675.jpg"];
-  const stage2Images = ["assets/img/IMG_4619.jpg", "assets/img/IMG_4650.jpg", "assets/img/IMG_4658.jpg", "assets/img/IMG_4682.jpg", "assets/img/IMG_4684.jpg", "assets/img/IMG_4687.jpg"];
-  const stage3Images = ["assets/img/IMG_4592.jpg", "assets/img/IMG_4593.jpg", "assets/img/IMG_4595.jpg", "assets/img/IMG_4626.jpg", "assets/img/IMG_4638.jpg", "assets/img/IMG_4648.jpg", "assets/img/IMG_4649.jpg", "assets/img/IMG_4663.jpg", "assets/img/IMG_4667.jpg", "assets/img/IMG_4668.jpg"];
+  const stage1Images = ["assets/img/IMG_4586.webp", "assets/img/IMG_4588.webp", "assets/img/IMG_4590.webp", "assets/img/IMG_4591.webp", "assets/img/IMG_4675.webp"];
+  const stage2Images = ["assets/img/IMG_4619.webp", "assets/img/IMG_4650.webp", "assets/img/IMG_4658.webp", "assets/img/IMG_4682.webp", "assets/img/IMG_4684.webp", "assets/img/IMG_4687.webp"];
+  const stage3Images = ["assets/img/IMG_4592.webp", "assets/img/IMG_4593.webp", "assets/img/IMG_4595.webp", "assets/img/IMG_4626.webp", "assets/img/IMG_4638.webp", "assets/img/IMG_4648.webp", "assets/img/IMG_4649.webp", "assets/img/IMG_4663.webp", "assets/img/IMG_4667.webp", "assets/img/IMG_4668.webp"];
 
   let selectedImg = "";
   if (lote.stage === 1) selectedImg = stage1Images[lote.id % stage1Images.length];
@@ -682,20 +682,27 @@ window.addEventListener("DOMContentLoaded", () => {
   const videoStartSecs = 7;
 
   if (cinematicVideo) {
-    if (cinematicVideo.readyState >= 1) {
-      cinematicVideo.currentTime = videoStartSecs;
-    } else {
-      cinematicVideo.addEventListener("loadedmetadata", () => {
-        cinematicVideo.currentTime = videoStartSecs;
-      });
-    }
+    let isInitialized = false;
+    const initVideoControl = () => {
+      if (isInitialized) return;
+      isInitialized = true;
 
-    // Loop correction: when it loops, reset it to videoStartSecs instead of 0
-    cinematicVideo.addEventListener("timeupdate", () => {
-      if (cinematicVideo.currentTime < 0.5) {
+      // Only apply skip and loop correction to the full desktop video (duration > 70s)
+      if (cinematicVideo.duration > 70) {
         cinematicVideo.currentTime = videoStartSecs;
+        cinematicVideo.addEventListener("timeupdate", () => {
+          if (cinematicVideo.currentTime < 0.5) {
+            cinematicVideo.currentTime = videoStartSecs;
+          }
+        });
       }
-    });
+    };
+
+    if (cinematicVideo.readyState >= 1) {
+      initVideoControl();
+    } else {
+      cinematicVideo.addEventListener("loadedmetadata", initVideoControl);
+    }
   }
 
   // --- 12. Scroll Reveal IntersectionObserver ---
