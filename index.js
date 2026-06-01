@@ -676,4 +676,50 @@ window.addEventListener("DOMContentLoaded", () => {
   
   // Default load Senda de la Calma detailed data (keeps container hidden on load)
   loadSendaDetails("calma");
+
+  // --- 11. Video Start Time Control (Skip logo intro and start directly at map) ---
+  const cinematicVideo = document.querySelector(".video-bg");
+  const videoStartSecs = 7;
+
+  if (cinematicVideo) {
+    if (cinematicVideo.readyState >= 1) {
+      cinematicVideo.currentTime = videoStartSecs;
+    } else {
+      cinematicVideo.addEventListener("loadedmetadata", () => {
+        cinematicVideo.currentTime = videoStartSecs;
+      });
+    }
+
+    // Loop correction: when it loops, reset it to videoStartSecs instead of 0
+    cinematicVideo.addEventListener("timeupdate", () => {
+      if (cinematicVideo.currentTime < 0.5) {
+        cinematicVideo.currentTime = videoStartSecs;
+      }
+    });
+  }
+
+  // --- 12. Scroll Reveal IntersectionObserver ---
+  const revealElements = document.querySelectorAll(".reveal");
+  if (revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          // Stagger reveal of any immediate .reveal children if they exist
+          const staggers = entry.target.querySelectorAll(".reveal-child");
+          staggers.forEach((child, idx) => {
+            setTimeout(() => {
+              child.classList.add("active");
+            }, idx * 100);
+          });
+        }
+      });
+    }, {
+      root: document.querySelector(".scroll-container") || null,
+      threshold: 0.05,
+      rootMargin: "0px 0px -40px 0px"
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  }
 });
