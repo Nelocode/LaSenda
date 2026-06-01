@@ -9,7 +9,6 @@ scratch/
 # Original heavy assets (only the optimized versions go into the image)
 assets/img/trailer.mp4
 assets/img/campo.mp4
-assets/img/la_senda_invitacion.mp4
 assets/img/render_*.png
 
 # Git metadata
