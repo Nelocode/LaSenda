@@ -10,9 +10,9 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copy site files
-COPY index.html    /usr/share/nginx/html/
-COPY index.css     /usr/share/nginx/html/
-COPY index.js      /usr/share/nginx/html/
+COPY *.html        /usr/share/nginx/html/
+COPY *.css         /usr/share/nginx/html/
+COPY *.js          /usr/share/nginx/html/
 COPY assets/       /usr/share/nginx/html/assets/
 
 # Correct permissions
