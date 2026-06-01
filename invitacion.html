@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Invitación Exclusiva | La Senda®</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Te invitamos al lanzamiento exclusivo de La Senda. Vive el retorno a lo esencial en Titiribí, Antioquia.">
+  <meta property="og:title" content="Invitación Exclusiva | La Senda®">
+  <meta property="og:description" content="Lanzamiento privado de parcelas premium. Confirma tu asistencia y agenda el evento.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/encuentro_1.jpg">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="invitacion.css">
+</head>
+<body>
+
+  <!-- Scroll Snapping Container -->
+  <div class="scroll-container">
+    
+    <!-- SECCIÓN 1: EL VIDEO (Protagonista de la Portada) -->
+    <section class="scroll-section" id="origin">
+      <div class="video-container">
+        <video class="hero-video" id="hero-video" autoplay muted playsinline poster="assets/img/encuentro_1.jpg">
+          <source src="assets/img/la_senda_invitacion.mp4" type="video/mp4">
+          Tu navegador no soporta reproducción de video.
+        </video>
+      </div>
+      
+      <div class="section-content text-center">
+        <div class="scroll-hint">
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: EL MENSAJE (Información Conceptual & Poética) -->
+    <section class="scroll-section" id="message">
+      <!-- Contour line overlay curves -->
+      <div class="contour-overlay curves-dark"></div>
+      
+      <div class="section-content flex-center text-center">
+        <div class="message-wrap">
+          <span class="category-tag animate-fade-in-up">El Manifiesto</span>
+          <h2 class="message-title animate-fade-in-up delay-1">El privilegio de pertenecer</h2>
+          <p class="message-text animate-fade-in-up delay-2">Un llamado de retorno a lo esencial, el silencio y la naturaleza en el Suroeste Antioqueño.</p>
+          
+          <div class="message-divider animate-fade-in-up delay-2">
+            <img src="assets/img/logo_monograma.png" alt="Isotipo La Senda" class="message-divider-icon">
+          </div>
+          
+          <p class="message-subtext animate-fade-in-up delay-2">62 parcelas exclusivas diseñadas para conectar con el origen. Un refugio rodeado de bosques nativos, senderos y aguas puras en Titiribí.</p>
+          
+          <div class="scroll-hint text-muted-scroll">
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- SECCIÓN 3: LA INVITACIÓN (Detalles del Evento & Confirmación) -->
+    <section class="scroll-section" id="details">
+      <!-- Contour line overlay curves -->
+      <div class="contour-overlay curves-dark"></div>
+      
+      <div class="section-content flex-center">
+        <div class="details-card">
+          <span class="card-subtitle">Estás Invitado</span>
+          <h2 class="card-title">Lanzamiento Oficial</h2>
+          
+          <div class="event-details-grid">
+            <div class="detail-item">
+              <div class="detail-icon"><i class="fa-solid fa-calendar-day"></i></div>
+              <div class="detail-text">
+                <span class="detail-label">Fecha</span>
+                <span class="detail-val">Sábado, 20 de Junio, 2026</span>
+              </div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-icon"><i class="fa-solid fa-clock"></i></div>
+              <div class="detail-text">
+                <span class="detail-label">Hora</span>
+                <span class="detail-val">10:00 AM – 4:00 PM</span>
+              </div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+              <div class="detail-text">
+                <span class="detail-label">Lugar</span>
+                <span class="detail-val">Parcelación La Senda<br><small>Titiribí, Antioquia (A 45 min de Medellín)</small></span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="action-buttons-group">
+            <button class="btn btn-rsvp" id="btn-rsvp">
+              <i class="fa-brands fa-whatsapp btn-icon"></i> Confirmar Asistencia
+            </button>
+            
+            <div class="calendar-dropdown-wrapper">
+              <button class="btn btn-secondary btn-calendar" id="btn-calendar-trigger">
+                <i class="fa-solid fa-calendar-plus btn-icon"></i> Agregar al Calendario
+              </button>
+              <div class="calendar-options" id="calendar-options-menu" aria-hidden="true">
+                <a href="#" class="calendar-opt" id="opt-gcal" target="_blank"><i class="fa-brands fa-google"></i> Google Calendar</a>
+                <a href="#" class="calendar-opt" id="opt-ics"><i class="fa-solid fa-file-export"></i> Descargar Archivo (.ics)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- SECCIÓN 4: EL ENCUENTRO (Cierre de Ventana, Logos & Redes) -->
+    <section class="scroll-section" id="footer-section">
+      <!-- White contour line overlay curves -->
+      <div class="contour-overlay curves-light"></div>
+      
+      <div class="section-content flex-center text-center">
+        <div class="footer-wrap">
+          <div class="nature-window-arch">
+            <div class="nature-window-img" style="background-image: url('assets/img/calma_2.jpg');"></div>
+          </div>
+          
+          <p class="footer-poetic">"La Senda no es solo un lugar, es la promesa de un reencuentro con el origen y la tierra."</p>
+          
+          <div class="social-networks">
+            <a href="https://instagram.com" class="social-icon-btn" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com" class="social-icon-btn" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/573000000000" class="social-icon-btn" aria-label="WhatsApp Ventas" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://goo.gl/maps/example" class="social-icon-btn" aria-label="Cómo llegar" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+          </div>
+          
+          <div class="main-site-cta">
+            <a href="index.html" class="btn btn-outline-white">
+              Explorar el Sitio Web <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+            </a>
+          </div>
+          
+          <div class="footer-partners-credits">
+            <span class="partners-label">Un proyecto de</span>
+            <div class="partner-logos-row">
+              <img src="assets/img/logo_origen21.jpg" alt="ORIGEN 21" class="partner-logo-footer">
+              <img src="assets/img/logo_cntxt.png" alt="CNTXT" class="partner-logo-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Javascript -->
+  <script src="invitacion.js"></script>
+</body>
+</html>
