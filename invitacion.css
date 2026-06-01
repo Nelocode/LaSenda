@@ -757,3 +757,8 @@ html, body {
   opacity: 0.95;
   filter: grayscale(0) brightness(1);
 }
+
+.logo-invert-screen {
+  filter: invert(1) brightness(0.95) grayscale(100%);
+  mix-blend-mode: screen;
+}
