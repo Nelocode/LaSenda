@@ -28,58 +28,49 @@
 </head>
 <body>
 
-  <!-- Scroll Snapping Container -->
-  <div class="scroll-container">
-    
-    <!-- SECCIÓN 1: EL VIDEO (Protagonista de la Portada) -->
-    <section class="scroll-section" id="origin">
-      <div class="video-container">
-        <video class="hero-video" id="hero-video" autoplay muted playsinline poster="assets/img/encuentro_1.webp">
-          <source src="assets/img/la_senda_invitacion_optimized.mp4" type="video/mp4">
-          Tu navegador no soporta reproducción de video.
-        </video>
-      </div>
-      
-      <div class="section-content text-center">
-        <div class="scroll-hint">
-          <i class="fa-solid fa-chevron-down"></i>
-        </div>
-      </div>
-    </section>
+  <!-- Video Progress Timeline Bar (Runs at top of screen) -->
+  <div class="video-progress-container">
+    <div class="video-progress-bar" id="video-progress-bar"></div>
+  </div>
 
-    <!-- SECCIÓN 2: EL MENSAJE (Información Conceptual & Poética) -->
-    <section class="scroll-section" id="message">
-      <!-- Contour line overlay curves -->
-      <div class="contour-overlay curves-dark"></div>
-      
-      <div class="section-content flex-center text-center">
-        <div class="message-wrap">
-          <span class="category-tag animate-fade-in-up">El Manifiesto</span>
-          <h2 class="message-title animate-fade-in-up delay-1">El privilegio de pertenecer</h2>
-          <p class="message-text animate-fade-in-up delay-2">Un llamado de retorno a lo esencial, el silencio y la naturaleza en el Suroeste Antioqueño.</p>
-          
-          <div class="message-divider animate-fade-in-up delay-2">
-            <img src="assets/img/logo_monograma.webp" alt="Isotipo La Senda" class="message-divider-icon" loading="lazy">
-          </div>
-          
-          <p class="message-subtext animate-fade-in-up delay-2">62 parcelas exclusivas diseñadas para conectar con el origen. Un refugio rodeado de bosques nativos, senderos y aguas puras en Titiribí.</p>
-          
-          <div class="scroll-hint text-muted-scroll">
-            <i class="fa-solid fa-chevron-down"></i>
-          </div>
-        </div>
+  <!-- 3-Second Hook Intro Overlay -->
+  <div class="intro-overlay" id="intro-overlay" role="dialog" aria-modal="true" aria-label="Introducción a La Senda">
+    <div class="intro-content">
+      <span class="intro-eyebrow">La Senda®</span>
+      <h1 class="intro-title">Invitación exclusiva</h1>
+      <div class="intro-loader">
+        <div class="intro-loader-bar"></div>
       </div>
-    </section>
+      <button class="btn btn-enter" id="btn-enter">Abrir Invitación</button>
+    </div>
+  </div>
+
+  <!-- Main Invitation Screen (Single Viewport Layout) -->
+  <main class="invitation-screen">
     
-    <!-- SECCIÓN 3: LA INVITACIÓN (Detalles del Evento & Confirmación) -->
-    <section class="scroll-section" id="details">
-      <!-- Contour line overlay curves -->
-      <div class="contour-overlay curves-dark"></div>
+    <!-- Background Video Wrapper -->
+    <div class="video-background-wrapper">
+      <video class="hero-video" id="hero-video" autoplay muted loop playsinline poster="assets/img/encuentro_1.webp">
+        <source src="assets/img/la_senda_invitacion_optimized.mp4" type="video/mp4">
+        Tu navegador no soporta reproducción de video.
+      </video>
+      <div class="video-tint-overlay"></div>
+    </div>
+
+    <!-- UI Overlay Elements (Structured in a Flex Layout) -->
+    <div class="interface-container">
       
-      <div class="section-content flex-center">
+      <!-- Top Brand Header -->
+      <header class="brand-header animate-fade-in">
+        <img src="assets/img/logo_monograma.webp" alt="Isotipo La Senda" class="brand-monogram">
+        <h2 class="brand-subtitle">Lanzamiento Oficial</h2>
+      </header>
+
+      <!-- Center Event Details Card -->
+      <section class="event-details-section animate-fade-in-up">
         <div class="details-card">
           <span class="card-subtitle">Estás Invitado</span>
-          <h2 class="card-title">Lanzamiento Oficial</h2>
+          <h2 class="card-title">El privilegio de pertenecer</h2>
           
           <div class="event-details-grid">
             <div class="detail-item">
@@ -107,63 +98,35 @@
             </div>
           </div>
           
-          <div class="action-buttons-group">
-            <button class="btn btn-rsvp" id="btn-rsvp">
-              <i class="fa-brands fa-whatsapp btn-icon"></i> Confirmar Asistencia
-            </button>
-            
-            <div class="calendar-dropdown-wrapper">
-              <button class="btn btn-secondary btn-calendar" id="btn-calendar-trigger">
-                <i class="fa-solid fa-calendar-plus btn-icon"></i> Agregar al Calendario
-              </button>
-              <div class="calendar-options" id="calendar-options-menu" aria-hidden="true">
-                <a href="#" class="calendar-opt" id="opt-gcal" target="_blank"><i class="fa-brands fa-google"></i> Google Calendar</a>
-                <a href="#" class="calendar-opt" id="opt-ics"><i class="fa-solid fa-file-export"></i> Descargar Archivo (.ics)</a>
-              </div>
-            </div>
+          <!-- Only WhatsApp RSVP Link, Calendar removed per client request -->
+          <button class="btn btn-rsvp" id="btn-rsvp">
+            <i class="fa-brands fa-whatsapp btn-icon"></i> Confirmar Asistencia
+          </button>
+        </div>
+      </section>
+
+      <!-- Bottom Credits Footer -->
+      <footer class="credits-footer animate-fade-in-up delay-1">
+        <!-- Contour line overlay curves -->
+        <div class="contour-overlay curves-light"></div>
+        
+        <!-- Portal Image to main page (No index.html button but clicking the portal will redirect) -->
+        <div class="footer-nature-portal nature-window-arch" title="Explorar La Senda">
+          <div class="nature-window-img" style="background-image: url('assets/img/calma_2.webp');"></div>
+        </div>
+        
+        <!-- Credits row with transparent inverting logos -->
+        <div class="credits-row">
+          <span class="credits-label">Un proyecto de</span>
+          <div class="partner-logos-row">
+            <img src="assets/img/logo_origen21.webp" alt="ORIGEN 21" class="partner-logo-footer logo-invert-screen" loading="lazy">
+            <img src="assets/img/logo_cntxt.webp" alt="CNTXT" class="partner-logo-footer" loading="lazy">
           </div>
         </div>
-      </div>
-    </section>
-    
-    <!-- SECCIÓN 4: EL ENCUENTRO (Cierre de Ventana, Logos & Redes) -->
-    <section class="scroll-section" id="footer-section">
-      <!-- White contour line overlay curves -->
-      <div class="contour-overlay curves-light"></div>
-      
-      <div class="section-content flex-center text-center">
-        <div class="footer-wrap">
-          <div class="nature-window-arch">
-            <div class="nature-window-img" style="background-image: url('assets/img/calma_2.webp');"></div>
-          </div>
-          
-          <p class="footer-poetic">"La Senda no es solo un lugar, es la promesa de un reencuentro con el origen y la tierra."</p>
-          
-          <div class="social-networks">
-            <a href="https://instagram.com" class="social-icon-btn" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://facebook.com" class="social-icon-btn" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://wa.me/573000000000" class="social-icon-btn" aria-label="WhatsApp Ventas" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="https://goo.gl/maps/example" class="social-icon-btn" aria-label="Cómo llegar" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
-          </div>
-          
-          <div class="main-site-cta">
-            <a href="index.html" class="btn btn-outline-white">
-              Explorar el Sitio Web <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
-            </a>
-          </div>
-          
-          <div class="footer-partners-credits">
-            <span class="partners-label">Un proyecto de</span>
-            <div class="partner-logos-row">
-              <img src="assets/img/logo_origen21.webp" alt="ORIGEN 21" class="partner-logo-footer logo-invert-screen" loading="lazy">
-              <img src="assets/img/logo_cntxt.webp" alt="CNTXT" class="partner-logo-footer" loading="lazy">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-  </div>
+      </footer>
+
+    </div>
+  </main>
 
   <!-- Toast Notification Container -->
   <div id="toast-container" class="toast-container"></div>
