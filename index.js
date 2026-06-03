@@ -750,13 +750,17 @@ function updateTimelinePath() {
   discoveryPath.setAttribute("d", discoveryD);
 
   // Update stroke-dasharray and stroke-dashoffset on the discovery path
-  const pathLength = discoveryPath.getTotalLength();
-  discoveryPath.style.strokeDasharray = pathLength;
-  const station4 = document.getElementById("station-4");
-  if (station4 && !station4.classList.contains("station-locked")) {
-    discoveryPath.style.strokeDashoffset = "0";
-  } else {
-    discoveryPath.style.strokeDashoffset = pathLength;
+  try {
+    const pathLength = discoveryPath.getTotalLength();
+    discoveryPath.style.strokeDasharray = pathLength;
+    const station4 = document.getElementById("station-4");
+    if (station4 && !station4.classList.contains("station-locked")) {
+      discoveryPath.style.strokeDashoffset = "0";
+    } else {
+      discoveryPath.style.strokeDashoffset = pathLength;
+    }
+  } catch (e) {
+    console.warn("SVG path length calculation deferred:", e);
   }
 }
 
@@ -840,7 +844,12 @@ window.addEventListener("DOMContentLoaded", () => {
       // Make pointer visible
       timelinePointer.style.display = "block";
       
-      const pathLength = discoveryPath.getTotalLength();
+      let pathLength = 250; // robust default fallback length
+      try {
+        pathLength = discoveryPath.getTotalLength();
+      } catch (e) {
+        console.warn("SVG discovery path length calculation failed on click:", e);
+      }
       let start = null;
       const duration = 2000; // 2 seconds animation
       
@@ -899,5 +908,9 @@ window.addEventListener("DOMContentLoaded", () => {
   updateTimelinePath();
   window.addEventListener("resize", updateTimelinePath);
   window.addEventListener("load", updateTimelinePath);
+  if (document.fonts) {
+    document.fonts.ready.then(updateTimelinePath);
+  }
   setTimeout(updateTimelinePath, 500); // Fallback deferred calculations
+  setTimeout(updateTimelinePath, 1500); // Additional delay to ensure layout shifts are fully stabilized
 });

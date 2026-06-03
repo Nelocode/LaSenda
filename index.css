@@ -2740,8 +2740,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .station-text {
-  font-family: var(--font-sans);
-  font-size: 0.88rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
   color: var(--color-dark);
   opacity: 0.85;
   line-height: 1.7;
@@ -2876,5 +2876,16 @@ h1, h2, h3, h4, h5, h6 {
   }
   .station-title {
     font-size: 1.5rem;
+  }
+}
+
+/* Override desktop height and overflow restrictions for the new timeline section */
+@media (min-width: 769px) {
+  #caminos-timeline {
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    padding: 8rem 4rem !important;
+    justify-content: flex-start !important;
   }
 }
