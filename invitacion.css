@@ -3,6 +3,88 @@
    Mobile-First, Elegant Single-Screen Editorial Layout
    ========================================================================== */
 
+/* --- 0. Brand Fonts (Local @font-face) --- */
+@font-face {
+  font-family: 'Ruigslay';
+  src: url('assets/fonts/Ruigslay.ttf') format('truetype'),
+       url('assets/fonts/Ruigslay.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-Italic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-Black.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-Black.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-BlackItalic.otf') format('opentype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-BlackItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-BlackItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Acumin Variable Concept';
+  src: url('assets/fonts/Acumin-Variable-Concept.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* --- 1. Variables & Global Styles --- */
 :root {
   --color-primary-green: #3D5C34;
@@ -17,7 +99,8 @@
   --color-border-light: #E8E4DC;
   
   --font-display: 'Simonetta', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Acumin Variable Concept', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-logo: 'Ruigslay', 'Simonetta', serif;
   
   --transition-normal: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   --transition-quick: all 0.2s ease;
