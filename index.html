@@ -153,6 +153,100 @@
       </div>
     </section>
 
+    <!-- Section 2B: Senda Histórica (Camino de Tarjetas Sinuoso e Interactivo) -->
+    <section class="section timeline-section" id="caminos-timeline" style="scroll-snap-align: start;">
+      <div class="logo-watermark watermark-left" style="background-image: url('assets/img/logo_lasenda.webp');"></div>
+      <div class="logo-watermark watermark-right" style="background-image: url('assets/img/logo_lasenda.webp');"></div>
+      <div class="manifesto-bg-decoration">HISTORIA</div>
+      <div class="container-timeline">
+        <div class="section-header reveal" style="text-align: center;">
+          <p class="section-subtitle" style="font-family: var(--font-sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.25em; color: var(--color-accent-gold); text-transform: uppercase;">Caminos ancestrales</p>
+          <h2 class="section-title" style="font-family: var(--font-display); font-size: 2.8rem; font-weight: 500; color: var(--color-primary-green); margin-top: 0.5rem; margin-bottom: 1.5rem;">Senda Histórica del Territorio</h2>
+          <p style="color: var(--color-text-muted); max-width: 580px; margin: 0 auto; font-size: 0.95rem; line-height: 1.7; font-family: var(--font-sans);">
+            Descubre paso a paso el origen de los trazados de La Senda. Un recorrido interactivo a través de la memoria física de nuestra montaña.
+          </p>
+        </div>
+
+        <div class="timeline-wrapper">
+          <!-- Vertical sinuous path line -->
+          <div class="timeline-line">
+            <svg viewBox="0 0 100 800" preserveAspectRatio="none" class="timeline-svg-path" aria-hidden="true" style="overflow: visible;">
+              <!-- Base light path -->
+              <path id="timeline-base-path" d="M 50,0 L 50,80 C 80,150 80,210 50,280 C 20,380 20,480 50,580 C 80,660 80,720 50,800" fill="none" stroke="var(--color-border-light)" stroke-width="1.5"/>
+              <!-- Active path from Node 1 to Node 3 -->
+              <path id="timeline-active-path" d="M 50,0 L 50,80 C 80,150 80,210 50,280 C 20,380 20,480 50,580" fill="none" stroke="var(--color-accent-gold)" stroke-width="2.5"/>
+              <!-- Discovery path segment from Node 3 to Node 4 (curves to the right) -->
+              <path id="timeline-discovery-path" d="M 50,580 C 80,660 80,720 50,800" fill="none" stroke="var(--theme-accent)" stroke-width="3" stroke-dasharray="300" stroke-dashoffset="300" style="transition: stroke-dashoffset 1.8s cubic-bezier(0.25, 0.8, 0.25, 1);"/>
+            </svg>
+            <div class="timeline-stone-pointer" id="timeline-pointer" style="display: none;"></div>
+          </div>
+
+          <!-- Station 1 -->
+          <div class="timeline-station left reveal">
+            <div class="station-node" aria-hidden="true" style="top: 80px;">01</div>
+            <div class="station-content">
+              <span class="station-meta">Estación I &bull; Las Redes Vivas</span>
+              <h3 class="station-title">Caminos Heredados</h3>
+              <p class="station-text">
+                Para los Titiribíes y Sinifanaes, los senderos no se trazaban: se heredaban. Eran redes vivas que se adaptaban de forma orgánica al relieve, respetando los nacimientos de agua y la topografía.
+              </p>
+            </div>
+          </div>
+
+          <!-- Station 2 -->
+          <div class="timeline-station right reveal">
+            <div class="station-node" aria-hidden="true" style="top: 280px;">02</div>
+            <div class="station-content">
+              <span class="station-meta">Estación II &bull; Tránsito con Intención</span>
+              <h3 class="station-title">Caminar sin Prisa</h3>
+              <p class="station-text">
+                No se trataba de llegar rápido, sino de transitar con intención. Caminar era un acto sagrado de conexión con la tierra, una infraestructura viva para el intercambio y la memoria.
+              </p>
+            </div>
+          </div>
+
+          <!-- Station 3 -->
+          <div class="timeline-station left reveal">
+            <div class="station-node" aria-hidden="true" style="top: 580px;">03</div>
+            <div class="station-content">
+              <span class="station-meta">Estación III &bull; Hitos de Memoria</span>
+              <h3 class="station-title">Rutas de Encuentro</h3>
+              <p class="station-text">
+                Rutas espirituales y de intercambio de semillas bajo el cobijo protector de Cerro Tusa, un referente natural que funcionaba como guía y conexión territorial para la comunidad.
+              </p>
+              <div class="trace-path-container" style="margin-top: 1.5rem; text-align: right;">
+                <button class="btn-trace-path" id="btn-trace-timeline" type="button">
+                  Descubrir Senda Contemporánea <i class="fa-solid fa-compass" style="margin-left: 5px;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Station 4 -->
+          <div class="timeline-station right reveal station-locked" id="station-4">
+            <div class="station-node" aria-hidden="true" style="top: 800px;">04</div>
+            <div class="station-content">
+              <span class="station-meta">Estación IV &bull; Acupuntura Urbana</span>
+              <h3 class="station-title">El Retorno a lo Esencial</h3>
+              <p class="station-text">
+                La Senda retoma esa verdad profunda. Un modelo de urbanismo respetuoso con la montaña y el bosque nativo. El camino aquí no se impone: se descubre a cada paso.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="logo-repeat-separator reveal">
+          <img src="assets/img/logo_monograma.webp" alt="">
+          <img src="assets/img/logo_monograma.webp" alt="">
+          <img src="assets/img/logo_monograma.webp" alt="">
+        </div>
+        <div class="manifesto-signature-editorial reveal" style="text-align: center; margin-top: 1.5rem;">
+          <div class="signature-title" style="font-family: var(--font-display); font-size: 1.5rem; text-transform: uppercase; color: var(--color-text-dark); letter-spacing: 0.1em; font-weight: 500;">LA SENDA®</div>
+          <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-text-muted); letter-spacing: 0.1em; display: block; margin-top: 5px;">El privilegio de pertenecer</span>
+        </div>
+      </div>
+    </section>
+
     <!-- Section 3: El Tríptico (Desplegable 3 Cuerpos) -->
     <section class="section triptych-section" id="elige-tu-senda" style="scroll-snap-align: start;">
       <div class="triptych-container">

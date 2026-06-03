@@ -669,6 +669,97 @@ function showToast(message, borderStyle) {
   }, 5000);
 }
 
+// --- 13. Dynamic Timeline Sinuous Path Alignment ---
+function updateTimelinePath() {
+  const wrapper = document.querySelector(".timeline-wrapper");
+  const basePath = document.getElementById("timeline-base-path");
+  const activePath = document.getElementById("timeline-active-path");
+  const discoveryPath = document.getElementById("timeline-discovery-path");
+  const stations = document.querySelectorAll(".timeline-station");
+  
+  if (!wrapper || !basePath || !activePath || !discoveryPath) return;
+
+  const wrapperRect = wrapper.getBoundingClientRect();
+  const wrapperHeight = wrapperRect.height;
+  const isMobile = window.innerWidth <= 768;
+
+  // Find y coordinates of the nodes relative to the wrapper
+  const yCoords = [];
+  stations.forEach(station => {
+    const node = station.querySelector(".station-node");
+    if (node) {
+      const nodeRect = node.getBoundingClientRect();
+      const nodeCenterY = nodeRect.top - wrapperRect.top + nodeRect.height / 2;
+      yCoords.push(nodeCenterY);
+    }
+  });
+
+  if (yCoords.length < 4) return;
+
+  // Set SVG viewBox dynamically to match wrapper height
+  const svg = basePath.ownerSVGElement;
+  if (svg) {
+    svg.setAttribute("viewBox", `0 0 100 ${wrapperHeight}`);
+  }
+
+  // Draw paths
+  let baseD = "";
+  let activeD = "";
+  let discoveryD = "";
+
+  if (isMobile) {
+    // On mobile, draw a straight line down the left side
+    baseD = `M 50,0 L 50,${wrapperHeight}`;
+    activeD = `M 50,0 L 50,${yCoords[2]}`;
+    discoveryD = `M 50,${yCoords[2]} L 50,${yCoords[3]}`;
+  } else {
+    // On desktop, draw the beautiful sinuous curve that waves left and right
+    const amp = 30; // amplitude of curves (x goes from 50 to 50 + amp or 50 - amp)
+    
+    baseD = `M 50,0 L 50,${yCoords[0]}`;
+    
+    // Curve 1: Node 1 to Node 2 (curves to the right)
+    const cy1_1 = yCoords[0] + 0.3 * (yCoords[1] - yCoords[0]);
+    const cy1_2 = yCoords[0] + 0.7 * (yCoords[1] - yCoords[0]);
+    baseD += ` C ${50 + amp},${cy1_1} ${50 + amp},${cy1_2} 50,${yCoords[1]}`;
+    
+    // Curve 2: Node 2 to Node 3 (curves to the left)
+    const cy2_1 = yCoords[1] + 0.3 * (yCoords[2] - yCoords[1]);
+    const cy2_2 = yCoords[1] + 0.7 * (yCoords[2] - yCoords[1]);
+    baseD += ` C ${50 - amp},${cy2_1} ${50 - amp},${cy2_2} 50,${yCoords[2]}`;
+    
+    // Curve 3: Node 3 to Node 4 (curves to the right)
+    const cy3_1 = yCoords[2] + 0.3 * (yCoords[3] - yCoords[2]);
+    const cy3_2 = yCoords[2] + 0.7 * (yCoords[3] - yCoords[2]);
+    baseD += ` C ${50 + amp},${cy3_1} ${50 + amp},${cy3_2} 50,${yCoords[3]}`;
+    
+    // End segment
+    baseD += ` L 50,${wrapperHeight}`;
+
+    // Active path (from top to Node 3)
+    activeD = `M 50,0 L 50,${yCoords[0]}`;
+    activeD += ` C ${50 + amp},${cy1_1} ${50 + amp},${cy1_2} 50,${yCoords[1]}`;
+    activeD += ` C ${50 - amp},${cy2_1} ${50 - amp},${cy2_2} 50,${yCoords[2]}`;
+
+    // Discovery path (from Node 3 to Node 4)
+    discoveryD = `M 50,${yCoords[2]} C ${50 + amp},${cy3_1} ${50 + amp},${cy3_2} 50,${yCoords[3]}`;
+  }
+
+  basePath.setAttribute("d", baseD);
+  activePath.setAttribute("d", activeD);
+  discoveryPath.setAttribute("d", discoveryD);
+
+  // Update stroke-dasharray and stroke-dashoffset on the discovery path
+  const pathLength = discoveryPath.getTotalLength();
+  discoveryPath.style.strokeDasharray = pathLength;
+  const station4 = document.getElementById("station-4");
+  if (station4 && !station4.classList.contains("station-locked")) {
+    discoveryPath.style.strokeDashoffset = "0";
+  } else {
+    discoveryPath.style.strokeDashoffset = pathLength;
+  }
+}
+
 // --- 10. Initialisation on page load ---
 window.addEventListener("DOMContentLoaded", () => {
   // Render lotes grid
@@ -729,4 +820,84 @@ window.addEventListener("DOMContentLoaded", () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
   }
+
+  // --- 14. Timeline Sinuous Path Discovery Logic (Station 3 to 4) ---
+  const btnTraceTimeline = document.getElementById("btn-trace-timeline");
+  const discoveryPath = document.getElementById("timeline-discovery-path");
+  const timelinePointer = document.getElementById("timeline-pointer");
+  const station4 = document.getElementById("station-4");
+
+  if (btnTraceTimeline && discoveryPath && timelinePointer && station4) {
+    btnTraceTimeline.addEventListener("click", () => {
+      // Disable button during animation
+      btnTraceTimeline.disabled = true;
+      btnTraceTimeline.style.opacity = "0.7";
+      btnTraceTimeline.innerHTML = 'Descubriendo... <i class="fa-solid fa-spinner fa-spin" style="margin-left: 5px;"></i>';
+      
+      // Reset stroke-dashoffset to draw the golden path segment
+      discoveryPath.style.strokeDashoffset = "0";
+      
+      // Make pointer visible
+      timelinePointer.style.display = "block";
+      
+      const pathLength = discoveryPath.getTotalLength();
+      let start = null;
+      const duration = 2000; // 2 seconds animation
+      
+      function animateTimelinePebble(timestamp) {
+        if (!start) start = timestamp;
+        const elapsed = timestamp - start;
+        const progress = Math.min(1, elapsed / duration);
+        const currentLength = progress * pathLength;
+        
+        try {
+          // Get dynamic coordinates along the sinuous curve
+          const point = discoveryPath.getPointAtLength(currentLength);
+          
+          // Coordinate mapping: SVG is dynamically sized
+          timelinePointer.style.left = point.x + "%";
+          timelinePointer.style.top = point.y + "px";
+        } catch (e) {
+          // Fallback coordinate calculations if SVG API fails
+          timelinePointer.style.left = "50%";
+          const wrapperRect = document.querySelector(".timeline-wrapper").getBoundingClientRect();
+          const n3 = document.querySelector(".timeline-station:nth-of-type(3) .station-node");
+          const n4 = document.querySelector(".timeline-station:nth-of-type(4) .station-node");
+          const y3 = n3.getBoundingClientRect().top - wrapperRect.top + n3.offsetHeight / 2;
+          const y4 = n4.getBoundingClientRect().top - wrapperRect.top + n4.offsetHeight / 2;
+          timelinePointer.style.top = (y3 + progress * (y4 - y3)) + "px";
+        }
+        
+        if (progress < 1) {
+          requestAnimationFrame(animateTimelinePebble);
+        } else {
+          // Path tracing completed!
+          setTimeout(() => {
+            // Unlock Station 4 visual display
+            station4.classList.remove("station-locked");
+            
+            // Update trigger button state
+            btnTraceTimeline.innerHTML = '¡Senda Descubierta! <i class="fa-solid fa-circle-check" style="margin-left: 5px;"></i>';
+            btnTraceTimeline.style.background = "var(--color-salvia)";
+            btnTraceTimeline.style.borderColor = "var(--color-salvia)";
+            btnTraceTimeline.style.cursor = "default";
+            
+            // Visual notification ripple
+            showToast("¡Has descubierto el retorno a lo esencial en la Estación IV!", "var(--color-accent-gold)");
+            
+            // Hide pointer pebble after completion
+            timelinePointer.style.display = "none";
+          }, 300);
+        }
+      }
+      
+      requestAnimationFrame(animateTimelinePebble);
+    });
+  }
+
+  // Bind responsive alignment events for timeline path
+  updateTimelinePath();
+  window.addEventListener("resize", updateTimelinePath);
+  window.addEventListener("load", updateTimelinePath);
+  setTimeout(updateTimelinePath, 500); // Fallback deferred calculations
 });

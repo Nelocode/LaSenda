@@ -2599,3 +2599,282 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* --- 16. Sección Interactiva: Senda Histórica (Camino de Tarjetas) --- */
+.timeline-section {
+  position: relative;
+  padding: 8rem 2rem;
+  background-color: var(--color-cream);
+  overflow: hidden;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.container-timeline {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-wrapper {
+  position: relative;
+  margin-top: 5rem;
+  padding: 2rem 0;
+}
+
+/* Sinuous vertical line */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  transform: translateX(-50%);
+  z-index: 1;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.timeline-svg-path {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.timeline-station {
+  position: relative;
+  width: 50%;
+  margin-bottom: 5rem;
+  z-index: 2;
+}
+
+.timeline-station.left {
+  left: 0;
+  padding-right: 4.5rem;
+  text-align: right;
+}
+
+.timeline-station.right {
+  left: 50%;
+  padding-left: 4.5rem;
+  text-align: left;
+}
+
+.timeline-station:last-child {
+  margin-bottom: 0;
+}
+
+/* Timeline center node */
+.station-node {
+  position: absolute;
+  top: 50% !important;
+  width: 38px;
+  height: 38px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-accent-gold);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--color-primary-green);
+  z-index: 3;
+  transform: translateY(-50%) !important;
+  box-shadow: 0 4px 10px rgba(80, 100, 65, 0.05);
+  transition: var(--transition-quick);
+}
+
+.timeline-station:hover .station-node {
+  background-color: var(--color-primary-green);
+  color: var(--color-white);
+  border-color: var(--color-primary-green);
+  box-shadow: 0 0 15px rgba(80, 100, 65, 0.2);
+}
+
+.timeline-station.left .station-node {
+  right: -19px;
+  left: auto;
+}
+
+.timeline-station.right .station-node {
+  left: -19px;
+  right: auto;
+}
+
+.station-content {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border-light);
+  padding: 2.2rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow-editorial);
+  transition: var(--transition-smooth);
+}
+
+.timeline-station:hover .station-content {
+  border-color: rgba(61, 92, 52, 0.25);
+  box-shadow: var(--shadow-editorial), 0 8px 25px rgba(61, 92, 52, 0.04);
+  transform: translateY(-3px);
+  background-color: var(--color-white);
+}
+
+.station-meta {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+  letter-spacing: 0.12em;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.station-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--color-primary-green);
+  margin-bottom: 0.8rem;
+}
+
+.station-text {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--color-dark);
+  opacity: 0.85;
+  line-height: 1.7;
+}
+
+/* Sinuous path additional styles */
+.timeline-station.station-locked {
+  opacity: 0.15;
+  filter: blur(2px);
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.timeline-stone-pointer {
+  position: absolute;
+  width: 24px;
+  height: 22px;
+  background-color: var(--color-accent-gold);
+  border: 2px solid var(--color-white);
+  border-radius: 48% 52% 47% 53% / 50% 48% 52% 50%;
+  box-shadow: 0 4px 10px rgba(154, 125, 69, 0.35);
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  display: none;
+  transition: background-color var(--transition-quick);
+}
+
+.logo-watermark {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: opacity 0.5s ease;
+}
+
+.watermark-left {
+  left: -150px;
+  top: 30%;
+}
+
+.watermark-right {
+  right: -150px;
+  bottom: 20%;
+}
+
+.manifesto-bg-decoration {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  font-family: var(--font-display);
+  font-size: 15vw;
+  font-weight: 300;
+  color: rgba(80, 100, 65, 0.015);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.logo-repeat-separator {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 3.5rem 0 1.5rem;
+  opacity: 0.08;
+  pointer-events: none;
+  user-select: none;
+}
+
+.logo-repeat-separator img {
+  height: 18px;
+  width: auto;
+}
+
+.btn-trace-path {
+  padding: 0.6rem 1.4rem;
+  background: var(--color-primary-green);
+  border: 1px solid var(--color-primary-green);
+  border-radius: 20px;
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: var(--transition-quick);
+}
+
+.btn-trace-path:hover {
+  background-color: var(--color-salvia);
+  border-color: var(--color-salvia);
+  transform: translateY(-1px);
+}
+
+/* Responsive adjustments for mobile timeline */
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 1px;
+    width: 38px;
+    transform: none;
+  }
+  .timeline-station {
+    width: 100%;
+    margin-bottom: 3.5rem;
+  }
+  .timeline-station.left {
+    left: 0;
+    padding-left: 3.5rem;
+    padding-right: 0;
+    text-align: left;
+  }
+  .timeline-station.right {
+    left: 0;
+    padding-left: 3.5rem;
+    padding-right: 0;
+    text-align: left;
+  }
+  .timeline-station.left .station-node,
+  .timeline-station.right .station-node {
+    left: 1px;
+    right: auto;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+  .station-content {
+    padding: 1.8rem;
+  }
+  .station-title {
+    font-size: 1.5rem;
+  }
+}
