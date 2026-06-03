@@ -700,6 +700,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   padding: 6.5rem 2rem 2rem;
   position: relative;
+  z-index: 1;
 }
 
 .manifesto-section::before {
@@ -2754,8 +2755,9 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   padding: 8rem 2rem;
   background-color: var(--color-cream);
-  overflow: hidden;
+  overflow: visible;
   border-top: 1px solid var(--color-border-light);
+  z-index: 2;
 }
 
 .container-timeline {
@@ -3036,5 +3038,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow: visible !important;
     padding: 8rem 4rem !important;
     justify-content: flex-start !important;
+    scroll-snap-align: none !important;
+    z-index: 2 !important;
   }
 }
