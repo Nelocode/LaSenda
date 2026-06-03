@@ -12,6 +12,28 @@
   font-display: swap;
 }
 
+/* Simonetta Regular (Weights 300, 400, 500) */
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-Regular.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-Regular.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 @font-face {
   font-family: 'Simonetta';
   src: url('assets/fonts/Simonetta-Regular.otf') format('opentype');
@@ -20,6 +42,28 @@
   font-display: swap;
 }
 
+/* Simonetta Italic (Weights 300, 400, 500) */
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-Italic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-Italic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
 @font-face {
   font-family: 'Simonetta';
   src: url('assets/fonts/Simonetta-Italic.otf') format('opentype');
@@ -28,6 +72,35 @@
   font-display: swap;
 }
 
+/* Simonetta Black (Weights 600, 700, 800, 900) */
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-Black.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-Black.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-Black.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
 @font-face {
   font-family: 'Simonetta';
   src: url('assets/fonts/Simonetta-Black.otf') format('opentype');
@@ -36,22 +109,35 @@
   font-display: swap;
 }
 
+/* Simonetta Black Italic (Weights 600, 700, 800, 900) */
 @font-face {
   font-family: 'Simonetta';
-  src: url('assets/fonts/Simonetta-Black.otf') format('opentype');
+  src: url('assets/fonts/Simonetta-BlackItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-BlackItalic.otf') format('opentype');
   font-weight: 700;
-  font-style: normal;
+  font-style: italic;
   font-display: swap;
 }
-
 @font-face {
   font-family: 'Simonetta';
-  src: url('assets/fonts/Simonetta-Black.otf') format('opentype');
-  font-weight: 900;
-  font-style: normal;
+  src: url('assets/fonts/Simonetta-BlackItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
   font-display: swap;
 }
-
+@font-face {
+  font-family: 'Simonetta';
+  src: url('assets/fonts/Simonetta-BlackItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
 @font-face {
   font-family: 'Simonetta';
   src: url('assets/fonts/Simonetta-BlackItalic.otf') format('opentype');
@@ -60,26 +146,88 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Simonetta';
-  src: url('assets/fonts/Simonetta-BlackItalic.otf') format('opentype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Simonetta';
-  src: url('assets/fonts/Simonetta-BlackItalic.otf') format('opentype');
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
-
+/* Acumin Variable Concept (Mapped individually for full browser compatibility) */
 @font-face {
   font-family: 'Acumin Variable Concept';
   src: url('assets/fonts/Acumin-Variable-Concept.ttf') format('truetype');
   font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Acumin Variable Concept';
+  src: url('assets/fonts/Acumin-Variable-Concept.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Acumin Variable Concept';
+  src: url('assets/fonts/Acumin-Variable-Concept.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Acumin Variable Concept';
+  src: url('assets/fonts/Acumin-Variable-Concept.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Acumin Variable Concept';
+  src: url('assets/fonts/Acumin-Variable-Concept.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Acumin Variable Concept';
+  src: url('assets/fonts/Acumin-Variable-Concept.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Acumin Variable Concept';
+  src: url('assets/fonts/Acumin-Variable-Concept.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Acumin Variable Concept';
+  src: url('assets/fonts/Acumin-Variable-Concept.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Acumin Variable Concept';
+  src: url('assets/fonts/Acumin-Variable-Concept.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Acumin Variable Concept';
+  src: url('assets/fonts/Acumin-Variable-Concept.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Acumin Variable Concept';
+  src: url('assets/fonts/Acumin-Variable-Concept.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Acumin Variable Concept';
+  src: url('assets/fonts/Acumin-Variable-Concept.ttf') format('truetype');
+  font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
@@ -434,6 +582,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-title {
+  font-family: var(--font-logo);
   font-size: clamp(3rem, 7vw, 6rem);
   font-weight: 900;
   color: var(--color-white);
