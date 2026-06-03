@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- 5. Nature Window Portal Transition Effect ---
   const natureWindow = document.querySelector(".nature-window-arch");
-  const mainScreen = document.querySelector(".invitation-screen");
+  const mainScreen = document.querySelector(".scroll-container");
 
   if (natureWindow) {
     natureWindow.addEventListener("click", (e) => {

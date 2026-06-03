@@ -165,13 +165,34 @@ html, body {
   }
 }
 
-/* --- 4. Main Invitation Screen Layout --- */
-.invitation-screen {
+/* --- 4. Main Scroll Container & Section Layout --- */
+.scroll-container {
   width: 100%;
   height: 100vh;
   height: 100dvh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  background-color: #000000;
+  position: relative;
+  z-index: 10;
+}
+
+.scroll-section {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* --- Section 1: Video & Identity --- */
+.video-section {
+  background-color: #000000;
 }
 
 .video-background-wrapper {
@@ -180,7 +201,6 @@ html, body {
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: #000;
 }
 
 .hero-video {
@@ -194,73 +214,127 @@ html, body {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(26, 26, 26, 0.45) 0%,
-    rgba(26, 26, 26, 0.15) 40%,
-    rgba(26, 26, 26, 0.5) 75%,
-    rgba(26, 26, 26, 0.8) 100%
+    rgba(26, 26, 26, 0.4) 0%,
+    rgba(26, 26, 26, 0.1) 50%,
+    rgba(26, 26, 26, 0.4) 80%,
+    rgba(26, 26, 26, 0.7) 100%
   );
   z-index: 2;
 }
 
-.interface-container {
-  position: relative;
-  z-index: 10;
+.video-identity-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  pointer-events: none;
+  padding: 2rem;
+}
+
+.video-identity-logo {
+  max-width: clamp(140px, 45vw, 210px);
+  height: auto;
+  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.3));
+}
+
+/* Scroll Hint Indicator */
+.scroll-hint-wrapper {
+  position: absolute;
+  bottom: clamp(1.2rem, 5vh, 2.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.scroll-hint-text {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.scroll-hint-arrow {
+  color: var(--color-accent-gold);
+  font-size: 1.1rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  animation: bounceScrollHint 2s infinite;
+}
+
+@keyframes bounceScrollHint {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+/* --- Section 2: Details & RSVP --- */
+.details-section {
+  background-color: var(--color-bg-light); /* Ivory/Cream background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contour line curves overlay in background */
+.contour-overlay {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: 100vh;
-  height: 100dvh;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.06;
+  z-index: 1;
+}
+
+.curves-light {
+  background-image: url('assets/img/curves_light_overlay.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.details-section-content {
+  width: 100%;
+  max-width: 360px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: clamp(1.2rem, 3.5vh, 2.5rem) 1.5rem clamp(0.8rem, 2vh, 1.8rem);
+  padding: clamp(1rem, 3.5vh, 2.5rem) 1.25rem clamp(0.6rem, 2vh, 1.5rem);
   box-sizing: border-box;
-}
-
-/* --- 5. Top Brand Header --- */
-.brand-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.brand-monogram {
-  height: clamp(38px, 6vh, 48px);
-  width: auto;
-}
-
-.brand-subtitle {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--color-accent-gold);
+  position: relative;
+  z-index: 10;
+  gap: clamp(0.5rem, 2vh, 1.2rem);
 }
 
 /* --- 6. Center Event Details Card --- */
-.event-details-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 360px;
-  margin: auto 0; /* Centered in flex growth space */
-}
-
 .details-card {
-  background: rgba(250, 248, 245, 0.94); /* Warm ivory glassmorphism */
-  border: 1px solid rgba(154, 125, 69, 0.25);
-  border-radius: 20px;
-  padding: clamp(1.2rem, 4.5vh, 2rem) 1.5rem;
+  background: #FFFFFF; /* High-contrast white card on cream background */
+  border: 1px solid rgba(154, 125, 69, 0.15);
+  border-radius: 24px;
+  padding: clamp(1rem, 3.5vh, 1.8rem) 1.25rem;
   width: 100%;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 16px 40px rgba(61, 92, 52, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-top: auto; /* Push down to center */
 }
 
 .card-subtitle {
@@ -270,15 +344,15 @@ html, body {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: var(--color-accent-gold);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
 }
 
 .card-title {
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 5.5vw, 1.7rem);
+  font-size: clamp(1.3rem, 5.2vw, 1.6rem);
   font-weight: 400;
   color: var(--color-primary-green-dark);
-  margin-bottom: clamp(1.2rem, 3.5vh, 1.8rem);
+  margin-bottom: clamp(1rem, 3vh, 1.5rem);
   line-height: 1.25;
 }
 
@@ -286,8 +360,8 @@ html, body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: clamp(0.8rem, 2.5vh, 1.1rem);
-  margin-bottom: clamp(1.2rem, 3.8vh, 1.8rem);
+  gap: clamp(0.7rem, 2vh, 1rem);
+  margin-bottom: clamp(1rem, 3vh, 1.5rem);
   text-align: left;
 }
 
@@ -298,22 +372,22 @@ html, body {
 }
 
 .detail-icon {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--color-accent-gold);
   width: 20px;
   text-align: center;
-  margin-top: 1px;
+  margin-top: 2px;
 }
 
 .detail-text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 
 .detail-label {
   font-family: var(--font-sans);
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -321,14 +395,14 @@ html, body {
 }
 
 .detail-val {
-  font-size: 0.86rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--color-text-dark);
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .detail-val small {
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   font-weight: 400;
   color: var(--color-text-muted);
 }
@@ -340,17 +414,17 @@ html, body {
   justify-content: center;
   gap: 10px;
   width: 100%;
-  padding: 1rem 1.8rem;
+  padding: 0.9rem 1.5rem;
   border: none;
   border-radius: 12px;
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 12px rgba(61, 92, 52, 0.12);
+  box-shadow: 0 4px 12px rgba(61, 92, 52, 0.1);
 }
 
 .btn-rsvp {
@@ -363,11 +437,11 @@ html, body {
   background-color: var(--color-accent-gold);
   border-color: var(--color-accent-gold);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(154, 125, 69, 0.25);
+  box-shadow: 0 6px 20px rgba(154, 125, 69, 0.2);
 }
 
 .btn-icon {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 /* --- 8. Bottom Credits Footer --- */
@@ -376,18 +450,17 @@ html, body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  position: relative;
-  margin-top: 0.5rem;
+  margin-top: auto; /* Anchors it to the bottom */
 }
 
 .footer-nature-portal {
-  width: clamp(75px, 11vh, 95px);
-  height: clamp(105px, 16vh, 130px);
-  border-radius: 50px 50px 0 0;
+  width: clamp(70px, 10vh, 85px);
+  height: clamp(95px, 14vh, 120px);
+  border-radius: 45px 45px 0 0;
   overflow: hidden;
-  border: 2px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  margin-bottom: clamp(0.6rem, 1.8vh, 1rem);
+  border: 2px solid rgba(61, 92, 52, 0.15);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: clamp(0.5rem, 1.5vh, 0.8rem);
   cursor: pointer;
   transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -401,8 +474,8 @@ html, body {
 }
 
 .footer-nature-portal:hover {
-  border-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+  border-color: var(--color-accent-gold);
+  box-shadow: 0 0 20px rgba(154, 125, 69, 0.2);
   transform: scale(1.05);
 }
 
@@ -412,42 +485,42 @@ html, body {
 
 /* Immersive Organic Portal Transition */
 .footer-nature-portal.portal-clicked {
-  transform: scale(1.25);
-  border-color: #FFFFFF;
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+  transform: scale(1.3);
+  border-color: var(--color-accent-gold);
+  box-shadow: 0 0 30px rgba(154, 125, 69, 0.35);
   pointer-events: none;
 }
 
 .footer-nature-portal.portal-clicked .nature-window-img {
   transform: scale(1.3);
-  filter: brightness(1.15);
+  filter: brightness(1.1);
 }
 
 .credits-row {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .credits-label {
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(61, 92, 52, 0.5); /* Olive theme label */
 }
 
 .partner-logos-row {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
 .partner-logo-footer {
-  height: 32px;
+  height: 28px;
   width: auto;
-  opacity: 0.7;
+  opacity: 0.65;
   transition: var(--transition-quick);
 }
 
@@ -455,9 +528,12 @@ html, body {
   opacity: 1;
 }
 
-.logo-invert-screen {
-  filter: invert(1) brightness(0.95) grayscale(100%);
-  mix-blend-mode: screen;
+.partner-logo-dark {
+  filter: grayscale(100%) brightness(0.25);
+}
+
+.partner-logo-light-to-dark {
+  filter: invert(1) grayscale(100%) brightness(0.25);
 }
 
 /* --- 9. Toast Notification Styling --- */
