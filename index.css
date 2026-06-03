@@ -323,7 +323,7 @@ h1, h2, h3, h4, h5, h6 {
 .section {
   height: auto;
   min-height: auto;
-  width: 100vw;
+  width: 100%;
   position: relative;
   overflow: visible;
   display: flex;
@@ -2530,7 +2530,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Scroll snap proximity and header layout for desktop */
 @media (min-width: 769px) {
-  body {
+  html, body {
     overflow: hidden;
   }
   
@@ -2538,6 +2538,7 @@ h1, h2, h3, h4, h5, h6 {
   .scroll-container {
     height: 100vh;
     overflow-y: scroll;
+    overflow-x: hidden;
     scroll-snap-type: y proximity;
   }
   
@@ -2558,7 +2559,7 @@ h1, h2, h3, h4, h5, h6 {
   /* Horizontal Triptych Accordion */
   .triptych-container {
     flex-direction: row;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
   }
   
@@ -2755,7 +2756,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   padding: 8rem 2rem;
   background-color: var(--color-cream);
-  overflow: visible;
+  overflow: hidden;
   border-top: 1px solid var(--color-border-light);
   z-index: 2;
 }
@@ -3035,7 +3036,7 @@ h1, h2, h3, h4, h5, h6 {
   #caminos-timeline {
     height: auto !important;
     min-height: auto !important;
-    overflow: visible !important;
+    overflow: hidden !important;
     padding: 8rem 4rem !important;
     justify-content: flex-start !important;
     scroll-snap-align: none !important;
