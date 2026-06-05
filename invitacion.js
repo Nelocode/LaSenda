@@ -7,17 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   const heroVideo = document.getElementById("hero-video");
   const introOverlay = document.getElementById("intro-overlay");
-  const loaderBar = document.querySelector(".intro-loader-bar");
   
-  // --- 1. 3-Second Hook Loader Animation ---
-  if (loaderBar) {
-    // Small delay to trigger smooth transition after render
-    setTimeout(() => {
-      loaderBar.style.transition = "width 3.0s linear";
-      loaderBar.style.width = "100%";
-    }, 100);
-  }
-
   // --- 2. Dismiss Intro Overlay & Unmute Audio ---
   const dismissIntro = () => {
     if (!introOverlay || introOverlay.classList.contains("fade-out")) return;
