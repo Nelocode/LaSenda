@@ -319,11 +319,11 @@ html, body {
 }
 
 .intro-eyebrow {
-  font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.05em;
   color: var(--color-accent-gold);
   margin-bottom: 0.8rem;
   opacity: 0;
@@ -370,10 +370,9 @@ html, body {
   color: var(--color-accent-gold);
   padding: 0.8rem 2.2rem;
   font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   cursor: pointer;
   border-radius: 6px;
   opacity: 0;
@@ -485,12 +484,12 @@ html, body {
 }
 
 .scroll-hint-text {
-  font-family: var(--font-sans);
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.75);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -515,7 +514,7 @@ html, body {
 
 /* --- Section 2: Details & RSVP --- */
 .details-section {
-  background-color: var(--color-bg-light); /* Ivory/Cream background */
+  background-color: var(--color-primary-green-dark); /* Dark green background */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -569,13 +568,13 @@ html, body {
 }
 
 .card-subtitle {
-  font-family: var(--font-sans);
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.05em;
   color: var(--color-accent-gold);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
 }
 
 .card-title {
@@ -617,11 +616,10 @@ html, body {
 }
 
 .detail-label {
-  font-family: var(--font-sans);
-  font-size: 0.6rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 400;
+  font-style: italic;
   color: var(--color-primary-green-light);
 }
 
@@ -649,10 +647,9 @@ html, body {
   border: none;
   border-radius: 12px;
   font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 12px rgba(61, 92, 52, 0.1);
@@ -689,7 +686,7 @@ html, body {
   height: clamp(95px, 14vh, 120px);
   border-radius: 45px 45px 0 0;
   overflow: hidden;
-  border: 2px solid rgba(61, 92, 52, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
   margin-bottom: clamp(0.5rem, 1.5vh, 0.8rem);
   cursor: pointer;
@@ -735,11 +732,12 @@ html, body {
 }
 
 .credits-label {
-  font-size: 0.58rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: rgba(61, 92, 52, 0.5); /* Olive theme label */
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .partner-logos-row {
@@ -759,12 +757,12 @@ html, body {
   opacity: 1;
 }
 
-.partner-logo-dark {
-  filter: grayscale(100%) brightness(0.25);
+.partner-logo-dark-to-light {
+  filter: invert(1) grayscale(100%) brightness(0.95);
 }
 
-.partner-logo-light-to-dark {
-  filter: invert(1) grayscale(100%) brightness(0.25);
+.partner-logo-light {
+  filter: grayscale(100%) brightness(0.95);
 }
 
 /* --- 9. Toast Notification Styling --- */

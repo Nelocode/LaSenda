@@ -76,21 +76,21 @@ const lotesData = [
 // --- 2. Sendas Database ---
 const sendasData = {
   encuentro: {
-    title: "Senda del Encuentro",
+    title: "Senda del encuentro",
     subtitle: "Etapa I - Del Agua",
-    story: "Inspirada en el ritual social y la vida comunitaria. Ubicada en la entrada de la parcelación, la Senda del Encuentro es el corazón social de La Senda. Aquí se destaca la portería robusta y el Mall Comercial, concebido para brindar conveniencia (café, panadería artesanal y canasta básica) sin alterar la paz residencial. Con una distribución de parqueos separada de las circulaciones de los propietarios, permite el flujo público ordenado e invita a compartir fogatas, picnics y mercados campesinos al aire libre.",
+    story: "Inspirada en el ritual social y la vida comunitaria. Ubicada en la entrada de la parcelación, la Senda del encuentro es el corazón social de La Senda. Aquí se destaca la portería robusta y el Mall Comercial, concebido para brindar conveniencia (café, panadería artesanal y canasta básica) sin alterar la paz residencial. Con una distribución de parqueos separada de las circulaciones de los propietarios, permite el flujo público ordenado e invita a compartir fogatas, picnics y mercados campesinos al aire libre.",
     images: ["assets/img/render_encuentro_1.webp", "assets/img/render_encuentro_2.webp", "assets/img/render_encuentro_3.webp", "assets/img/encuentro_1.webp", "assets/img/encuentro_2.webp", "assets/img/IMG_4619.webp"],
     amenities: ["Mall Comercial Integrado", "Parqueadero de Visitantes Ampliado", "Portería de Seguridad Robustecida 24/7", "Plaza de Fogatas & Socialización", "Senderos de Conexión Rápida", "Cafetería y Panadería de Pueblo"]
   },
   movimiento: {
-    title: "Senda del Movimiento",
+    title: "Senda del movimiento",
     subtitle: "Etapa II - Del Bosque",
     story: "Concebida para quienes se conectan con el territorio a través del esfuerzo físico y la exploración activa. Esta senda incluye un circuito completo de senderos deportivos con pendientes variables de baja, media y alta dificultad, adaptados de forma respetuosa al relieve natural sin explanaciones destructivas. El recorrido serpentea a través del bosque, ofreciendo estaciones de picnic, y culmina en la cima de la montaña con el Mirador Panorámico: un deck cubierto con zona de fogata (firepit) que regala visuales espectaculares del suroeste y Cerro Tusa.",
     images: ["assets/img/render_movimiento_1.webp", "assets/img/render_movimiento_2.webp", "assets/img/render_movimiento_3.webp", "assets/img/movimiento_1.webp", "assets/img/movimiento_2.webp", "assets/img/IMG_4684.webp"],
     amenities: ["Mirador Panorámico Elevado", "Deck Cubierto & Firepit Premium", "Senderos Deportivos de Montaña", "Estaciones de Hidratación", "Espacios de Picnic en el Bosque", "Conexión Directa a Rutas Outdoor"]
   },
   calma: {
-    title: "Senda de la Calma",
+    title: "Senda de la calma",
     subtitle: "Etapa III - Del Viento",
     story: "Ubicada en el sector más íntimo y boscoso, es el refugio de la serenidad y la contemplación. Acompañada por el murmullo de la quebrada nativa, cuenta con un Parque Lineal con decks de madera diseñados para la meditación, yoga y desconexión total. El sendero del bosque culmina en una Estancia Equina especializada, diseñada para dueños de caballos y amantes de la equitación consciente, donde se puede pasear, interactuar y descansar en armonía con el entorno, totalmente aislado del tráfico de vehículos.",
     images: ["assets/img/render_calma_1.webp", "assets/img/render_calma_2.webp", "assets/img/render_calma_3.webp", "assets/img/calma_1.webp", "assets/img/calma_2.webp", "assets/img/IMG_4649.webp", "assets/img/IMG_4648.webp"],
@@ -402,11 +402,11 @@ function renderLotesGrid() {
       
       let desc = "";
       if (lote.stage === 1) {
-        desc = "Ubicación privilegiada en la Senda del Encuentro. Lote de topografía suave, a pocos metros del Mall Comercial y la portería general. Excelente conectividad y cercanía social.";
+        desc = "Ubicación privilegiada en la Senda del encuentro. Lote de topografía suave, a pocos metros del Mall Comercial y la portería general. Excelente conectividad y cercanía social.";
       } else if (lote.stage === 2) {
-        desc = "Emplazamiento único en media ladera en la Senda del Movimiento. Ofrece visuales espectaculares hacia Cerro Tusa y el valle del suroeste, ideal para un estilo de vida activo.";
+        desc = "Emplazamiento único en media ladera en la Senda del movimiento. Ofrece visuales espectaculares hacia Cerro Tusa y el valle del suroeste, ideal para un estilo de vida activo.";
       } else {
-        desc = "Refugio de serenidad absoluto en la Senda de la Calma. Lote de gran extensión rodeado de bosque nativo y el murmullo de la quebrada, cercano a la estancia equina.";
+        desc = "Refugio de serenidad absoluto en la Senda de la calma. Lote de gran extensión rodeado de bosque nativo y el murmullo de la quebrada, cercano a la estancia equina.";
       }
       
       card.innerHTML = `
@@ -620,9 +620,9 @@ leadForm.addEventListener("submit", (e) => {
   localStorage.setItem("lasenda_leads", JSON.stringify(existingLeads));
   
   let sendaText = "el proyecto general";
-  if (interesVal === "encuentro") sendaText = "la Senda del Encuentro (Etapa I)";
-  if (interesVal === "movimiento") sendaText = "la Senda del Movimiento (Etapa II)";
-  if (interesVal === "calma") sendaText = "la Senda de la Calma (Etapa III)";
+  if (interesVal === "encuentro") sendaText = "la Senda del encuentro (Etapa I)";
+  if (interesVal === "movimiento") sendaText = "la Senda del movimiento (Etapa II)";
+  if (interesVal === "calma") sendaText = "la Senda de la calma (Etapa III)";
   
   showToast(`¡Gracias, ${nombre.split(' ')[0]}! Hemos registrado tu interés en ${sendaText}. Un asesor de CNTXT se comunicará contigo pronto.`, "var(--theme-accent)");
   
