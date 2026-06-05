@@ -38,24 +38,21 @@ document.addEventListener("DOMContentLoaded", () => {
           heroVideo.play().catch(e => console.log("[La Senda Video] Muted play also blocked: ", e));
         });
     }
+
+    // Fade out brand logo overlay after 10 seconds of user interaction
+    const identityOverlay = document.querySelector(".video-identity-container");
+    if (identityOverlay) {
+      setTimeout(() => {
+        identityOverlay.classList.add("fade-out-logo");
+        console.log("[La Senda Video] Brand logo overlay faded out after 10s.");
+      }, 10000);
+    }
   };
 
   if (introOverlay) {
-    // Dismiss on click/touch anywhere on the overlay
+    // Dismiss on click/touch anywhere on the overlay (forces active interaction)
     introOverlay.addEventListener("click", dismissIntro);
     introOverlay.addEventListener("touchstart", dismissIntro);
-
-    // Auto-dismiss safety fallback after 3.2 seconds
-    setTimeout(() => {
-      if (!introOverlay.classList.contains("fade-out")) {
-        introOverlay.classList.add("fade-out");
-        console.log("[La Senda Video] Intro overlay auto-dismissed.");
-        if (heroVideo) {
-          // Play muted by default on auto-dismiss since no click might have happened
-          heroVideo.play().catch(err => console.log("[La Senda Video] Auto-play blocked.", err));
-        }
-      }
-    }, 3200);
   }
 
   // --- 3. Video Timeline Progress Bar ---
