@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   const heroVideo = document.getElementById("hero-video");
   const introOverlay = document.getElementById("intro-overlay");
-  
+
   // --- 2. Dismiss Intro Overlay & Unmute Audio ---
   const dismissIntro = () => {
     if (!introOverlay || introOverlay.classList.contains("fade-out")) return;
@@ -15,9 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
     introOverlay.classList.add("fade-out");
     console.log("[La Senda Video] Intro overlay dismissed by user.");
 
-    // Play video unmuted since user interacted (complies with browser policies)
+    // Play video unmuted from the beginning (complies with browser policies)
     if (heroVideo) {
       heroVideo.muted = false;
+      heroVideo.currentTime = 0; // Reset video to the beginning
       heroVideo.play()
         .then(() => {
           console.log("[La Senda Video] Unmuted play succeeded via click gesture.");
@@ -39,10 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  if (introOverlay) {
-    // Dismiss on click/touch anywhere on the overlay (forces active interaction)
-    introOverlay.addEventListener("click", dismissIntro);
-    introOverlay.addEventListener("touchstart", dismissIntro);
+  const btnEnter = document.getElementById("btn-enter");
+  if (btnEnter) {
+    // Force interaction directly with the button to enable audio autoplay compliance
+    btnEnter.addEventListener("click", (e) => {
+      e.stopPropagation();
+      dismissIntro();
+    });
   }
 
   // --- 3. Video Timeline Progress Bar ---
