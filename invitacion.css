@@ -469,7 +469,7 @@ html, body {
 }
 
 .video-identity-logo {
-  max-width: clamp(140px, 45vw, 210px);
+  max-width: clamp(190px, 65vw, 290px);
   height: auto;
   filter: brightness(0) invert(1) drop-shadow(0 4px 15px rgba(0, 0, 0, 0.3));
 }
