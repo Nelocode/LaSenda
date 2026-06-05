@@ -469,7 +469,7 @@ html, body {
 }
 
 .video-identity-logo {
-  max-width: clamp(190px, 65vw, 290px);
+  max-width: clamp(140px, 45vw, 210px);
   height: auto;
   filter: brightness(0) invert(1) drop-shadow(0 4px 15px rgba(0, 0, 0, 0.3));
 }
@@ -602,16 +602,15 @@ html, body {
 
 .detail-item {
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  align-items: center;
+  gap: 16px;
 }
 
 .detail-icon {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: var(--color-accent-gold);
-  width: 20px;
+  width: 24px;
   text-align: center;
-  margin-top: 2px;
 }
 
 .detail-text {
@@ -752,7 +751,7 @@ html, body {
 }
 
 .partner-logo-footer {
-  height: 28px;
+  height: 35px;
   width: auto;
   opacity: 0.65;
   transition: var(--transition-quick);
