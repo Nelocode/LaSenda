@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.stopPropagation(); // Avoid triggering page level gestures
       
       const whatsappNumber = "573243356537"; // Customer's designated WhatsApp
-      const rsvpMsg = "¡Hola! He recibido la invitación exclusiva para el lanzamiento privado de La Senda® y quiero confirmar mi asistencia para el próximo viernes 12 de junio a las 4:30 pm. Será un gran honor acompañarlos en esta velada y redescubrir juntos el privilegio de volver a lo esencial.";
+      const rsvpMsg = "¡Hola! Confirmo mi asistencia al lanzamiento privado de La Senda® el viernes 12 de junio a las 4:30 pm. ¡Gracias por la invitación!";
       const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(rsvpMsg)}`;
       
       showToast("Redireccionando a WhatsApp de confirmación...", "var(--color-primary-green)");
