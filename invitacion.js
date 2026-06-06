@@ -73,8 +73,8 @@ document.addEventListener("DOMContentLoaded", () => {
       showToast("Redireccionando a WhatsApp de confirmación...", "var(--color-primary-green)");
       
       setTimeout(() => {
-        window.open(waUrl, "_blank");
-      }, 1000);
+        window.location.href = waUrl;
+      }, 500);
     });
   }
 
